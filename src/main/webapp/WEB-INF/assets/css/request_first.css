@@ -1,0 +1,42 @@
+.info-list {
+    list-style: none;
+    padding: 0;
+    line-height: 1.5rem;
+    margin-top: 15px;
+}
+.block {
+    display: block;
+}
+.in-line {
+    display: inline-block;
+}
+.check-d {
+    vertical-align: top;
+    margin-top: 1px;
+}
+.trainer-data {
+    margin-left: 10px;
+}
+.check-block {
+    margin-top: 10px;
+}
+.b-r {
+    border-radius: 10px;
+}
+.card-h {
+    margin-top: 1.5rem;
+}
+.card-h i {
+    color: #0d6efd;
+}
+.header {
+    margin-top: 3rem;
+}
+.request-content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.comment-block {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

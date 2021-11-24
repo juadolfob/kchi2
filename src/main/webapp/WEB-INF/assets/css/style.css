@@ -1,0 +1,22 @@
+.filter-white {
+    filter: invert(99%) sepia(0%) saturate(7497%) hue-rotate(235deg) brightness(103%) contrast(100%);
+}
+
+.opacity-90 {
+    opacity: .90;
+}
+
+.dropdown-noicon::after {
+    display: none !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+  
+footer {
+    margin-top: auto;
+    height: 240px;
+}

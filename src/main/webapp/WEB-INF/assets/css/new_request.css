@@ -1,0 +1,35 @@
+.rc{
+    border-radius: 10px;
+}
+.icon-input{
+    position: relative;
+}
+.icon-input i{
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    color: gray;
+}
+.p-l{
+    padding-left: 38px;
+}
+.form-h {
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+.form-h h1 {
+    color: grey;
+    font-size: x-large;
+    font-weight: bold;
+    padding: auto;
+    vertical-align: bottom;
+}
+.form-h img {
+    vertical-align: top;
+}
+.form-h-e {
+    display: inline;
+}
+.main {
+    margin-bottom: 50px;
+}

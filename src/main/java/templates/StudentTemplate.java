@@ -20,21 +20,26 @@ JdbcTemplate template;
 		template = (JdbcTemplate)context.getBean("mytemp");
 	}
 	
-	public List<Student> getAllStudents() {
+	public void  getAllStudents() {
 		List<Student> students = template.query("Select * from student", new StudentMapper());
-//		for (Student student : students) {
-//			System.out.println("Id: "+ student.getSid());
-//			System.out.println("Name: "+ student.getSname());
-//			System.out.println("City: "+ student.getScity());
-//			System.out.println("Score: "+ student.getSscore());
-//			System.out.println("-----------------");
-//		}
-		return students;
+		for (Student student : students) {
+		System.out.println("Id: "+ student.getSid());
+		System.out.println("Name: "+ student.getSname());
+			System.out.println("City: "+ student.getScity());
+			System.out.println("Score: "+ student.getSscore());
+			System.out.println("-----------------");
+		}
+		//return students;
 	}
 	
-//	public static void main(String[] args) {
-//		StudentTemplate obj = new StudentTemplate();
-//		System.out.println("ok.....");
-//		obj.getAllStudents();
-//	}
+	public static void main(String[] args) {
+		StudentTemplate obj = new StudentTemplate();
+		System.out.println("ok.....");
+		obj.getAllStudents();
+		
+		
+		
+	
+	
+	}
 }

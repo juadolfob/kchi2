@@ -18,7 +18,9 @@
     <!--Provide support for conversion, formatting and validation -->  
     <mvc:annotation-driven/>  
   
-
+	<mvc:resources mapping="/css/**" location="/WEB-INF/assets/css/"/>
+<mvc:resources mapping="/res/**" location="/WEB-INF/assets/res/"/>
+	
   
   <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
         <property name="prefix" value="/WEB-INF/views/"></property>  

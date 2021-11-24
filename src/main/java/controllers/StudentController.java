@@ -16,8 +16,8 @@ public class StudentController {
 	@RequestMapping("/index")  
     public String index(Model model)  
     {  
-		List<Student> list = new StudentTemplate().getAllStudents();
-		model.addAttribute("students", list);
+		//List<Student> list = new StudentTemplate().getAllStudents();
+		//model.addAttribute("students", list);
 		return "/student/index";
     }  
 }

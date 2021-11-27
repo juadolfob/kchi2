@@ -9,10 +9,11 @@ import models.TrainingRequirementMaster;
 public class RequerimentServices {
 
 	
-	public TrainingRequirementMaster CreateRequestRequeriment(TrainingRequirementMaster trainingrequirementMaster ){
-		TrainingRequirementMaster trainingReq = new TrainingRequirementMaster();
-		
-		return trainingReq;
+	public TrainingRequirementMaster createRequestRequeriment(TrainingRequirementMaster trainingRequirementMaster ){
+		Object[] params = new Object[]{trainingRequirementMaster.getRequirementID(), trainingRequirementMaster.getRequirementReceivedDate(), trainingRequirementMaster.getRequirementUser(), trainingRequirementMaster.getRequirementUserVertical().getVid(), trainingRequirementMaster.getTrainingArea(), trainingRequirementMaster.getTrainingDescription(), trainingRequirementMaster.getRequestedTrainingStartDate(), trainingRequirementMaster.getTotalCandidates(), trainingRequirementMaster.getTrainingTimeZone(), trainingRequirementMaster.getTotalDurationDays()};
+		this.template.update("insert into trainingRequirementMaster values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", params);
+		TrainingRequirementMaster newRequirement = this.ReadRequestRequeriment(trainingRequirementMaster.getRequirementID());
+		return newRequirement;
 	}
 
 	public TrainingRequirementMaster ReadRequestRequeriment(String RequerimentID){

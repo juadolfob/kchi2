@@ -2,7 +2,11 @@ package controllers;
 
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import services.RequerimentServices;
 
 @Controller
 public class RequerimentServicesController {
@@ -12,27 +16,30 @@ public class RequerimentServicesController {
     {  
 		return "new_request";
     } 
-	@RequestMapping("/newRequest")  
+	@RequestMapping("/newRequest2")  
     public String createRequest(HttpServletRequest servlet)  
     {  
 		return "landing-page";
     } 
 	
-	@RequestMapping("/firstRequest")  
-    public String firstRequest() 
-    {  
-		return "request_first";
-    } 
-	@RequestMapping("/firstRequest") 
+	@RequestMapping("/requiremet-second") 
 	 public String firstRequestSendSecond(HttpServletRequest servlet)
 	 {
 		return "request_second";
 	 }
 	
-	@RequestMapping("/secondRequest")  
-    public String secondRequest(HttpServletRequest servlet)  
+	@RequestMapping("/requeriment/{id}")  
+    public String firstRequest(Model model, @PathVariable String id) 
     {  
-		return "landing-page";
+		model.addAttribute("requirement", new RequerimentServices().ReadRequestRequeriment(id));
+		return "LBP/request_first";
+    } 
+	
+	@RequestMapping("/requeriment-all")  
+    public String secondRequest(Model model)  
+    {  
+		model.addAttribute("requirements", new RequerimentServices().ReadAllRequestRequeriment());
+		return "LBP/landing-page";
     } 
 
 }

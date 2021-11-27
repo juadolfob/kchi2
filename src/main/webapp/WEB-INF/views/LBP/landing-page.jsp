@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
+   <c:set var="url">${pageContext.request.requestURL}</c:set>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -80,7 +81,6 @@
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                     industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
                     and scrambled it to make a type specimen book.</p>
-
             </div>
         </div>
         <div class="row" style="margin-top: 1.5rem;">
@@ -89,22 +89,26 @@
             </div>
         </div>
         <div class="row" style="margin-top: 2rem;">
+        
+        <c:forEach var="requirement" items="${requirements}">
             <div class="col-4">
                 <div class="card border-primary mb-3" style="border-radius: 15px;">
                     <div class="card-body">
                         <span class="badge bg-primary"> ● Pending</span>
-                        <h5 class="card-title" style="margin-top: 1.5rem;"><i class="fas fa-users" style="color: #0d6efd;"></i> Java full-stack Training</h5>  
+                        <h5 class="card-title" style="margin-top: 1.5rem;"><i class="fas fa-users" style="color: #0d6efd;"></i> ${requirement.getTrainingArea()} Training</h5>  
                         <ul style="list-style: none; padding: 0; line-height: 2.5rem;">
-                            <li><b>Id:</b> 2324234</li>
-                            <li><b>Name:</b> Paola Pérez Valencia</li>
-                            <li><b>Date:</b> 22 / 11 / 2021</li>
+                            <li><b>Id:</b> ${requirement.getRequirementID()}</li>
+                            <li><b>Name:</b> ${requirement.getRequirementUser()}</li>
+                            <li><b>Date:</b> ${requirement.getRequestedTrainingStartDate()}</li>
                         </ul>               
-                        <button class="btn btn-outline-primary" style="float: right;">View <i class="far fa-eye"></i></button>
+                       
+                    	<a href="requeriment/${requirement.getRequirementID()}" class="btn btn-outline-primary" style="float: right;">View <i class="far fa-eye"></i></a>
                     </div>
                 </div>
             </div>
+            </c:forEach>
 
-            <div class="col-4">
+            <%-- <div class="col-4">
                 <div class="card border-success mb-3" style="border-radius: 15px;">
                     <div class="card-body">
                         <span class="badge bg-success"> ● Complete</span>
@@ -117,9 +121,9 @@
                         <button class="btn btn-outline-success" style="float: right;">View <i class="far fa-eye"></i></button>
                     </div>
                 </div>
-            </div>
+            </div>--%>
 
-            <div class="col-4">
+          <%--  <div class="col-4">
                 <div class="card border-danger mb-3" style="border-radius: 15px;">
                     <div class="card-body">
                         <span class="badge bg-danger"> ● Complete</span>
@@ -132,7 +136,8 @@
                         <button class="btn btn-outline-danger" style="float: right;">View <i class="far fa-eye"></i></button>
                     </div>
                 </div>
-            </div>
+            </div>--%>
+            
         </div>
     </div>
 

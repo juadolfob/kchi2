@@ -5,9 +5,15 @@ public class VerticalMaster {
 	
 	private String verticalName;
 	private String vid;
-	//private String verticalLDPIP;
+	private LDMemberData verticalLBPID;
 	
 	
+	public LDMemberData getVerticalLBPID() {
+		return verticalLBPID;
+	}
+	public void setVerticalLBPID(LDMemberData verticalLBPID) {
+		this.verticalLBPID = verticalLBPID;
+	}
 	public String getVid() {
 		return vid;
 	}

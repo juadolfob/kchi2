@@ -7,13 +7,13 @@ public class TrainingParticipantData {
 	private String email;
 	private String contact;
 	private String attendanceStatus;
-	
+	private String RequirementID;
 	
 	public String getEmployeeID() {
 		return employeeID;
 	}
-	public void setEmployeeID(String employeeID) {
-		this.employeeID = employeeID;
+	public void setEmployeeID(String string) {
+		this.employeeID = string;
 	}
 	public String getEmployeeName() {
 		return employeeName;
@@ -30,8 +30,8 @@ public class TrainingParticipantData {
 	public String getContact() {
 		return contact;
 	}
-	public void setContact(String contact) {
-		this.contact = contact;
+	public void setContact(String i) {
+		this.contact = i;
 	}
 	public String getAttendanceStatus() {
 		return attendanceStatus;
@@ -39,5 +39,10 @@ public class TrainingParticipantData {
 	public void setAttendanceStatus(String attendanceStatus) {
 		this.attendanceStatus = attendanceStatus;
 	}
-	
+	public String getRequirementID(String RequirementID) {
+		return this.RequirementID;
+	}
+	public void setRequirementID(String RequirementID) {
+		this.RequirementID = RequirementID;
+	}
 }

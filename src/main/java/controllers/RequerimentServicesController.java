@@ -10,29 +10,29 @@ public class RequerimentServicesController {
 	@RequestMapping("/newRequest")  
     public String newrequest()  
     {  
-		return "new_request";
+		return "LBP/new_request";
     } 
-	@RequestMapping("/newRequest")  
+	@RequestMapping("/createRequest")  
     public String createRequest(HttpServletRequest servlet)  
     {  
-		return "landing-page";
-    } 
+		return "LBP/landing-page";
+    }
 	
 	@RequestMapping("/firstRequest")  
     public String firstRequest() 
     {  
-		return "request_first";
+		return "LBP/request_first";
     } 
-	@RequestMapping("/firstRequest") 
+	@RequestMapping("/firstRequestSendSecond") 
 	 public String firstRequestSendSecond(HttpServletRequest servlet)
 	 {
-		return "request_second";
+		return "LBP/request_second";
 	 }
 	
 	@RequestMapping("/secondRequest")  
     public String secondRequest(HttpServletRequest servlet)  
     {  
-		return "landing-page";
+		return "LBP/landing-page";
     } 
 
 }

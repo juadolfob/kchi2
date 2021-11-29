@@ -13,31 +13,29 @@ public class MembersController {
     @RequestMapping("/index")  
     public String main()
     {  
-		return "index";
+		return "LBP/index";
     } 
 	@RequestMapping("/signIn")  
     public String signin()  
     {  
-		return "login";
+		return "Users/login";
     }
      
 	@RequestMapping("/signUp")  
     public String registerPage()  
     {  
-		return "register";
+		return "Users/register";
     }
 	@RequestMapping("/resultMembers")  
 	 public String  resultMembers(HttpServletRequest servlet)
     {  
-		return "landing-page";
+		return "LBP/landing-page";
     }
-	
     
 	@RequestMapping("/registerMember") 
 	 public String registerMember(HttpServletRequest servlet)
 	 {
-		 return "landing-page";
+		 return "LBP/landing-page";
 	 }
-	
 	
 }

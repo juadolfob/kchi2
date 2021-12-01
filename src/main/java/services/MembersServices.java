@@ -7,8 +7,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 import mappers.LDMembermapper;
 import mappers.LDRoleMapper;
+import mappers.VerticalMasterMapper;
 import models.LDMemberData;
 import models.LDRoles;
+import models.VerticalMaster;
 
  
 
@@ -56,5 +58,33 @@ public class MembersServices {
 		List<LDRoles> allLDRoles = template.query("Select * from LDRoles", new LDRoleMapper());
 		return allLDRoles;
 	}
+
+	public LDMemberData getLDMemberById(String id) {
+		LDMemberData member=new LDMemberData();
+		Object[] params = new Object[]{id};
+		member = this.template.queryForObject("select * from LDMemberData where MemberID = ?", params, new LDMembermapper());
+		return member;
+	}
+	
+	public VerticalMaster getVerticalMasterById(String id) {
+		VerticalMaster vertical = new VerticalMaster();
+		Object[] params = new Object[]{id};
+		vertical = this.template.queryForObject("select * from VerticalMaster where VID = ?", params, new VerticalMasterMapper());
+		return vertical;
+	}
+	
+	
+	
+//	public static void main(String[] args) {
+//		
+//		MembersServices showdatas = new MembersServices();
+//		
+//		 LDMemberData member = showdatas.signIn("Mahesh");
+//		System.out.println(member.getMemberName()+ member.getLdRoleID().getLdRoleName());
+//		
+//		
+//		
+//	}
+	
 	
 }

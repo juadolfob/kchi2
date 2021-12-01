@@ -14,7 +14,7 @@ import services.MembersServices;
 @Controller
 public class MembersController {
 	
-    @RequestMapping("/index")  
+    @RequestMapping("/members")  
     public String main()
     {  
 		return "LBP/index";

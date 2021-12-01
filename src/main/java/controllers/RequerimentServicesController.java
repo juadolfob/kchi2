@@ -12,7 +12,8 @@ public class RequerimentServicesController {
     {  
 		return "LBP/new_request";
     } 
-	@RequestMapping("/createRequest")  
+
+	@RequestMapping("/createRequest")
     public String createRequest(HttpServletRequest servlet)  
     {  
 		return "LBP/landing-page";
@@ -23,7 +24,8 @@ public class RequerimentServicesController {
     {  
 		return "LBP/request_first";
     } 
-	@RequestMapping("/firstRequestSendSecond") 
+
+	@RequestMapping("/firstRequestSendSecond")
 	 public String firstRequestSendSecond(HttpServletRequest servlet)
 	 {
 		return "LBP/request_second";

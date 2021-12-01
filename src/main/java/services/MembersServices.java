@@ -18,8 +18,8 @@ public class MembersServices {
 	JdbcTemplate template;
 
 	public MembersServices() {
-	ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-	this.template = (JdbcTemplate) context.getBean("mytemp");
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+		this.template = (JdbcTemplate) context.getBean("mytemp");
 	}
 
 	
@@ -56,20 +56,5 @@ public class MembersServices {
 		List<LDRoles> allLDRoles = template.query("Select * from LDRoles", new LDRoleMapper());
 		return allLDRoles;
 	}
-	
-	
-
-
-
-
-	
-
-
-
-	
-	
-	
-	
-	
 	
 }

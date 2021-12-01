@@ -23,37 +23,30 @@ public class MembersServices {
 
 	
 	
+	
 	public LDMemberData signIn(String name) {
-		LDMemberData member=new LDMemberData();
-		
+		LDMemberData member=new LDMemberData();	
 		Object[] params = new Object[]{name};
 		member = this.template.queryForObject("select * from LDMemberData where MemberName = ?", params, new LDMembermapper());
 	
-		
-		
 		return member;
 	}
 	
-	public LDMemberData signUp(LDMemberData memberData) {
-		LDMemberData member=new LDMemberData();
+	
+	
+	public LDMemberData signUp(LDMemberData ldmemberdata) {
 		
-		
-		
-		
-		return member;
+		Object[] params = new Object[]{ldmemberdata.getMemberId(),ldmemberdata.getMemberName(),ldmemberdata.getMemberContact(),ldmemberdata.getMemberLocation(),ldmemberdata.getMemberEmail(),ldmemberdata.getLdRoleID()};
+		this.template.update("insert into LDMemberData values(?,?,?,?,?,?)", params);
+		return ldmemberdata;
 	}
+	
 	
 	public LDRoles LDRole(String id) {
 		LDRoles role =new LDRoles();
-		
-		
 		Object[] params = new Object[]{id};
 		role = this.template.queryForObject("select * from LDRoles where LDRoleID = ?", params, new LDRoleMapper());
-	
-		
-		
-		
-		
+
 		return role;
 		
 	}
@@ -62,14 +55,23 @@ public class MembersServices {
 	
 	public static void main(String[] args) {
 		
-		MembersServices showdatas = new MembersServices();
-		
-		 LDMemberData member = showdatas.signIn("Mahesh");
-		System.out.println(member.getMemberName()+ member.getLdRoleID().getLdRoleName());
+		//MembersServices showdatas = new MembersServices();
+		//MembersServices newdata = new MembersServices();
+		 //LDMemberData member = showdatas.signIn("Mahesh");
+		//LDMemberData ndata = newdata.signUp("MEM08", "Alison","534543534","Pachuca","alison@gmail.com","0005");
+		//System.out.println(ndata.getMemberName() + ndata.getLdRoleID().getLdRoleName());
 		
 		
 		
 	}
+
+
+
+
+	
+
+
+
 	
 	
 	

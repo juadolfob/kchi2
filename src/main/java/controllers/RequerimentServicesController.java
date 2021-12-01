@@ -12,7 +12,7 @@ public class RequerimentServicesController {
     {  
 		return "new_request";
     } 
-	@RequestMapping("/newRequest")  
+	@RequestMapping("/newRequest2")  
     public String createRequest(HttpServletRequest servlet)  
     {  
 		return "landing-page";
@@ -23,7 +23,7 @@ public class RequerimentServicesController {
     {  
 		return "request_first";
     } 
-	@RequestMapping("/firstRequest") 
+	@RequestMapping("/firstRequest2") 
 	 public String firstRequestSendSecond(HttpServletRequest servlet)
 	 {
 		return "request_second";

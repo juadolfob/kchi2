@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MembersController {
 	
-    @RequestMapping("/index")  
+    @RequestMapping("/members")  
     public String main()
     {  
 		return "index";

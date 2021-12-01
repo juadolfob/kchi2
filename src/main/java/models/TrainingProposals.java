@@ -4,19 +4,6 @@ import java.util.Date;
 
 public class TrainingProposals {
 
-	private String ExecutionID;
-	private Date proposedDate;
-	private LDMemberData memberID;
-	private String PropsedTime;
-	private int ProposedDuration;
-
-	private String proposalID;
-	public String getProposalID() {
-		return proposalID;
-	}
-	public void setProposalID(String proposalID) {
-		this.proposalID = proposalID;
-	}
 	public String getExecutionID() {
 		return ExecutionID;
 	}
@@ -29,11 +16,11 @@ public class TrainingProposals {
 	public void setProposedDate(Date proposedDate) {
 		this.proposedDate = proposedDate;
 	}
-	public LDMemberData getMemberID() {
-		return memberID;
+	public LDMemberData getMember() {
+		return member;
 	}
-	public void setMemberID(LDMemberData memberID) {
-		this.memberID = memberID;
+	public void setMember(LDMemberData member) {
+		this.member = member;
 	}
 	public String getPropsedTime() {
 		return PropsedTime;
@@ -47,5 +34,26 @@ public class TrainingProposals {
 	public void setProposedDuration(int proposedDuration) {
 		ProposedDuration = proposedDuration;
 	}
+	public int getMemberID() {
+		return memberID;
+	}
+	public void setMemberID(int memberID) {
+		this.memberID = memberID;
+	}
+	public String getProposalID() {
+		return proposalID;
+	}
+	public void setProposalID(String proposalID) {
+		this.proposalID = proposalID;
+	}
+	
+	private String ExecutionID;
+	private Date proposedDate;
+	private LDMemberData member;
+	private String PropsedTime;
+	private int ProposedDuration;
+	private int memberID;
+	private String proposalID;
+	
 	
 }

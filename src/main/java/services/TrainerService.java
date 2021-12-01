@@ -41,10 +41,9 @@ public class TrainerService {
 	
 	public TrainingProposals GetApproveSlot(String executionID){
 		TrainingProposals trainingApprove;
-		Object[] params = new Object[]{executionID};
-		trainingApprove = this.template.queryForObject("select * from TrainingProposals where ExecutionID = ?", params, new TrainingProposalsMapper());
-		LDMemberData member = this.template.queryForObject("select * from TrainingProposals where ExecutionID = ?", params, new LDMembermapper());
-		trainingApprove.setMemberID(member);
+		trainingApprove = this.template.queryForObject("select * from TrainingProposals where ExecutionID = ?", new Object[]{executionID}, new TrainingProposalsMapper());
+		LDMemberData member = this.template.queryForObject("select * from LDMemberData where MemberID = ?", new Object[]{trainingApprove.getMemberID()}, new LDMembermapper());
+		trainingApprove.setMember(member);
 		return trainingApprove;
 	}
 	

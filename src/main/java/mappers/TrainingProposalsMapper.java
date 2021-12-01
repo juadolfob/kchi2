@@ -19,11 +19,7 @@ public class TrainingProposalsMapper implements RowMapper<TrainingProposals>{
 		trainingProposals.setProposedDate(result.getDate("ProposedDate"));
 		trainingProposals.setPropsedTime(result.getString("ProposedTime"));
 		trainingProposals.setProposedDuration(result.getInt("ProposedDuration"));
-		
-		
-		
-		// Termporalmente
-		trainingProposals.setMemberID(null);
+		trainingProposals.setMemberID(result.getInt("MemberId"));
 		
 		return trainingProposals;
 	}

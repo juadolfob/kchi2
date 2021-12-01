@@ -3,16 +3,23 @@ package services;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import mappers.TrainingParticipantMapper;
 import models.TrainingParticipantData;
-import models.TrainingProposals;
 
 public class ParticipantServices {
-
 	
-	public List<TrainingParticipantData> GetSlot(String RequerimentID){
-		List<TrainingParticipantData> trainingparticipantData = new ArrayList<TrainingParticipantData>();
+	JdbcTemplate template;
+	
+	@SuppressWarnings("unchecked")
+	public List<TrainingParticipantData> getParticipants(String RequerimentID){
+		List<TrainingParticipantData> ParticipantsData = new ArrayList<TrainingParticipantData>();
 		
-		return trainingparticipantData;
+		Object[] params = new Object[]{RequerimentID};
+		ParticipantsData = (List<TrainingParticipantData>) this.template.queryForObject("select * from TrainingParticipantData where RequirementID = ?", params, new TrainingParticipantMapper());
+	
+		return ParticipantsData;
 	}
 
 	

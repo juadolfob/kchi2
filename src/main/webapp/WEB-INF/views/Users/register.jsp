@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+  
 
 <!DOCTYPE html>
 <html lang="en">
@@ -52,14 +54,22 @@
                   <i class="fas fa-envelope"></i>
                 </div>
               </div>
+              
+               <div class="form-group">
+                <label for="user_password" class="form-label">User Contact</label>
+                <div class="icon-input">
+                  <input type="number" required placeholder="Enter contact" id="user_contact" class="form-control padding-inputs redondeo"/>
+                  <i class="fas fa-phone"></i>
+                </div>
+              </div>
 
-              <div class="form-group">
+               <!--<div class="form-group">
                 <label for="user_password" class="form-label">User password</label>
                 <div class="icon-input">
                   <input type="password" required placeholder="Enter password" id="user_password" class="form-control padding-inputs redondeo"/>
                   <i class="fas fa-lock"></i>
                 </div>
-              </div>
+              </div>-->
 
             </div>
             <div class="col-4">
@@ -73,10 +83,17 @@
     
                   <div class="form-group">
                     <label for="user_role" class="form-label">User role</label>
-                    <div class="icon-input">
+                    <!--<div class="icon-input">
                       <input type="text" required placeholder="Enter role" id="user_role" class="form-control padding-inputs redondeo"/>
                       <i class="fas fa-tag"></i>
-                    </div>
+                    </div>-->
+                   
+                    <select class="form-select" aria-label="Default select example">
+                    	<option>Select a role</option>
+	                    <c:forEach var="ldrole" items="${ldroles}">
+	                    	<option>${ldrole.ldRoleName}</option>
+	                    </c:forEach>
+                    </select>
                   </div>
               <br/>
               <div>

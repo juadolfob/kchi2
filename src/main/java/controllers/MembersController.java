@@ -1,10 +1,14 @@
 package controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import models.LDRoles;
+import services.MembersServices;
 
 
 @Controller
@@ -13,31 +17,32 @@ public class MembersController {
     @RequestMapping("/index")  
     public String main()
     {  
-		return "index";
+		return "LBP/index";
     } 
 	@RequestMapping("/signIn")  
     public String signin()  
     {  
-		return "login";
+		return "Users/login";
     }
      
 	@RequestMapping("/signUp")  
-    public String registerPage()  
+    public String registerPage(Model model)  
     {  
-		return "register";
+		List<LDRoles> ldroleslist = new MembersServices().getLDRoles();
+		model.addAttribute("ldroles",ldroleslist);
+		return "Users/register";
     }
+	
 	@RequestMapping("/resultMembers")  
 	 public String  resultMembers(HttpServletRequest servlet)
     {  
-		return "landing-page";
+		return "LBP/landing-page";
     }
-	
     
 	@RequestMapping("/registerMember") 
 	 public String registerMember(HttpServletRequest servlet)
 	 {
-		 return "landing-page";
+		 return "LBP/landing-page";
 	 }
-	
 	
 }

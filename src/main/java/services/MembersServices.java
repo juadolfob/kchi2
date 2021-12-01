@@ -1,9 +1,10 @@
 package services;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
-
 import mappers.LDMembermapper;
 import mappers.LDRoleMapper;
 import models.LDMemberData;
@@ -51,19 +52,12 @@ public class MembersServices {
 		
 	}
 	
-	
-	
-	public static void main(String[] args) {
-		
-		//MembersServices showdatas = new MembersServices();
-		//MembersServices newdata = new MembersServices();
-		 //LDMemberData member = showdatas.signIn("Mahesh");
-		//LDMemberData ndata = newdata.signUp("MEM08", "Alison","534543534","Pachuca","alison@gmail.com","0005");
-		//System.out.println(ndata.getMemberName() + ndata.getLdRoleID().getLdRoleName());
-		
-		
-		
+	public List<LDRoles> getLDRoles(){
+		List<LDRoles> allLDRoles = template.query("Select * from LDRoles", new LDRoleMapper());
+		return allLDRoles;
 	}
+	
+	
 
 
 
@@ -72,6 +66,8 @@ public class MembersServices {
 
 
 
+	
+	
 	
 	
 	

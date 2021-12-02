@@ -39,7 +39,7 @@ public class MembersServices {
 	
 	public LDMemberData signUp(LDMemberData ldmemberdata) {
 		
-		Object[] params = new Object[]{ldmemberdata.getMemberId(),ldmemberdata.getMemberName(),ldmemberdata.getMemberContact(),ldmemberdata.getMemberLocation(),ldmemberdata.getMemberEmail(),ldmemberdata.getLdRoleID()};
+		Object[] params = new Object[]{ldmemberdata.getMemberId(),ldmemberdata.getMemberName(),ldmemberdata.getMemberContact(),ldmemberdata.getMemberLocation(),ldmemberdata.getMemberEmail(),ldmemberdata.getLdRoleID().getLdRoleID()};
 		this.template.update("insert into LDMemberData values(?,?,?,?,?,?)", params);
 		return ldmemberdata;
 	}

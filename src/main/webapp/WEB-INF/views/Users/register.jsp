@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/register.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    <title>Sing up</title>
+    <title>Sign Up</title>
 </head>
 <body>
     <header>
@@ -29,20 +28,20 @@
     <main class="container main">
         <div class="row justify-content-around">
             <div class="col-7 title-form text-secondary">
-              <img src="res/user-solid.svg" width="30" height="30" class="opacity-50" alt="user icon"/>
-              <h1>Sign up</h1>
+              <!-- <img src="res/user-solid.svg" width="30" height="30" class="opacity-50" alt="user icon"/>-->
+              <h1>Sign Up</h1>
             </div>
             <div class="col-1"></div>
           </div>
 
-        <form>
+        <form action="registerMember">
           <div class="row justify-content-around">
             <div class="col-4">
 
               <div class="form-group">
                 <label for="user_name" class="form-label">User name</label>
                 <div class="icon-input">
-                  <input type="text" required placeholder="Enter name" id="user_name" class="form-control padding-inputs redondeo"/>
+                  <input name="user_name" type="text" required placeholder="Enter name" id="user_name" class="form-control padding-inputs redondeo"/>
                   <i class="fas fa-user"></i>
                 </div>
               </div>
@@ -50,15 +49,15 @@
               <div class="form-group">
                 <label for="user_email" class="form-label">User email</label>
                 <div class="icon-input">
-                  <input type="email" required placeholder="Enter email" id="user_email" class="form-control padding-inputs redondeo"/>
+                  <input name="user_email" type="email" required placeholder="Enter email" id="user_email" class="form-control padding-inputs redondeo"/>
                   <i class="fas fa-envelope"></i>
                 </div>
               </div>
               
                <div class="form-group">
-                <label for="user_password" class="form-label">User Contact</label>
+                <label for="user_contact" class="form-label">User Contact</label>
                 <div class="icon-input">
-                  <input type="number" required placeholder="Enter contact" id="user_contact" class="form-control padding-inputs redondeo"/>
+                  <input name="user_contact" type="number" required placeholder="Enter contact" id="user_contact" class="form-control padding-inputs redondeo"/>
                   <i class="fas fa-phone"></i>
                 </div>
               </div>
@@ -76,7 +75,7 @@
                 <div class="form-group">
                     <label for="user_city" class="form-label">User city</label>
                     <div class="icon-input">
-                      <input type="text" required placeholder="Enter city" id="user_city" class="form-control padding-inputs redondeo"/>
+                      <input name="user_city"  type="text" required placeholder="Enter city" id="user_city" class="form-control padding-inputs redondeo"/>
                       <i class="far fa-building"></i>
                     </div>
                   </div>
@@ -88,23 +87,21 @@
                       <i class="fas fa-tag"></i>
                     </div>-->
                    
-                    <select class="form-select" aria-label="Default select example">
-                    	<option>Select a role</option>
-	                    <c:forEach var="ldrole" items="${ldroles}">
-	                    	<option>${ldrole.ldRoleName}</option>
-	                    </c:forEach>
-                    </select>
+          			<select name="ldrole">
+    					<c:forEach items="${ldroles}" var="role">
+       						 <option value="${role.ldRoleID}">${role.ldRoleName}</option>
+    					</c:forEach>
+					</select>
+
                   </div>
               <br/>
               <div>
-                <div class="d-inline p-2">Do you have an acount?</div>
-                <div class="d-inline p-2 text-primary"><a href="">Sign in</a></div>
+                <div class="d-inline p-2">Do you have an account?</div>
+                <div class="d-inline p-2 text-primary"><a href="signIn">Sign in</a></div>
               </div>
               <br/>
-              <div class="col text-center">
-                <button class="btn btn-primary btn-labeled redondeo">
-                    Sign up
-                  </button>
+              <div class="col text-center">     
+                 <input  type="submit" class="btn btn-primary btn-labeled redondeo" value="Sign Up"/> 
               </div>
             </div>
           </div>

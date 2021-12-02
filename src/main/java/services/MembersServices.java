@@ -54,11 +54,25 @@ public class MembersServices {
 		
 	}
 	
+	
+	
+	
 	public List<LDRoles> getLDRoles(){
 		List<LDRoles> allLDRoles = template.query("Select * from LDRoles", new LDRoleMapper());
 		return allLDRoles;
 	}
+	
+	
+	public List<VerticalMaster> GetVerticalMasterAll( ){
+		
+		
+		return null;
+	}
 
+	
+	
+	
+	
 	public LDMemberData getLDMemberById(String id) {
 		LDMemberData member=new LDMemberData();
 		Object[] params = new Object[]{id};

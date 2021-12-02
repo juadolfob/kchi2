@@ -23,7 +23,7 @@ public class RequerimentServicesController {
 	@RequestMapping("/newRequest")  
     public String newrequest(ModelMap model)  
     {  
-		model.addAttribute("verticals", new MembersServices().getVerticalMasterAll());
+		model.addAttribute("verticals", new MembersServices().getAllVerticalMaster());
 		return "LBP/new_request";
     } 
 

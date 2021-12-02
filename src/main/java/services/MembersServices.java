@@ -1,5 +1,6 @@
 package services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
@@ -80,14 +81,20 @@ public class MembersServices {
 		return prefix + sufix;
 	}
 	
+	public List<VerticalMaster> getAllVerticalMaster() {
+		List<VerticalMaster> vertical = new ArrayList<VerticalMaster>();
+		vertical = this.template.query("select * from VerticalMaster", new VerticalMasterMapper());
+		return vertical;
+	}
+	
 //	public static void main(String[] args) {
 //		
 //		MembersServices showdatas = new MembersServices();
 //		
-//		 LDMemberData member = showdatas.signIn("Mahesh");
-//		System.out.println(member.getMemberName()+ member.getLdRoleID().getLdRoleName());
-//		
-//		
+//		List<VerticalMaster> vertical = showdatas.getAllVerticalMaster();
+//		for (VerticalMaster verticalMaster : vertical) {
+//			System.out.println(verticalMaster.getVerticalName());
+//		}
 //		
 //	}
 	

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,45 +67,51 @@
         </div>
         <div class="col-1"></div>
       </div>
-      <form>
+      <form action="createRequest" method="post">
         <div class="row justify-content-around">
           <div class="col-4">
             <div class="form-group">
               <label for="vertical">User vertical</label>
-              <div class="icon-input">
-                <input type="text" required placeholder="Enter vertical data" id="vertical" class="form-control rc p-l"/>
-                <i class="fas fa-tag"></i>
-              </div>
+<!--               <div class="icon-input"> -->
+<!--                 <input type="text" required placeholder="Enter vertical data" id="vertical" class="form-control rc p-l"/> -->
+<!--                 <i class="fas fa-tag"></i> -->
+<!--               </div> -->
+				<select class="form-select" aria-label="Default select example" id="vertical" name="verticalMaster">
+                   	<option>Select vertical</option>
+                    <c:forEach var="vertical" items="${verticals}">
+                    	<option value="${vertical.vid}">${vertical.verticalName}</option>
+                    </c:forEach>
+                </select>
             </div>
             <div class="form-group">
               <label for="training-area">User training area</label>
               <div class="icon-input">
-                <input type="text" required placeholder="Enter training area" id="training_area" class="form-control rc p-l"/>
+                <input type="text" required placeholder="Enter training area" id="training_area" class="form-control rc p-l" name="trainingArea"/>
                 <i class="fas fa-dumbbell"></i>
               </div>
             </div>
             <div class="form-group">
               <label for="start_date">User training start date</label>
-              <input type="date" required placeholder="Enter training start date" id="start_date" class="form-control rc"/>
+              <input type="date" required placeholder="Enter training start date" id="start_date" class="form-control rc" name="startDate"/>
             </div>
             <div class="form-group">
               <label for="candidates">Total candidates</label>
               <div class="icon-input">
-                <input type="number" required placeholder="Enter candidates" id="candidates" class="form-control rc p-l"/>
+                <input type="number" required placeholder="Enter candidates" id="candidates" class="form-control rc p-l" name="candidates"/>
                 <i class="fas fa-tag"></i>
               </div>
             </div>
             <div class="form-group">
               <label for="time_zone">User training time zone</label>
               <div class="icon-input">
-                <input type="text" required placeholder="Enter traiing time zone" id="time_zone" class="form-control rc p-l"/>
+                <input type="text" required placeholder="Enter traiing time zone" id="time_zone" class="form-control rc p-l" name="timeZone"/>
                 <i class="far fa-building"></i>
               </div>
             </div>
             <div class="form-group">
               <label for="duration">Total duration days</label>
               <div class="icon-input">
-                <input type="number" required placeholder="Enter duration days" id="duration" class="form-control rc p-l"/>
+                <input type="number" required placeholder="Enter duration days" id="duration" class="form-control rc p-l" name="days"/>
                 <i class="fas fa-tag"></i>
               </div>
             </div>
@@ -111,7 +119,7 @@
           <div class="col-4">
             <div class="form-group">
               <label for="vertical">User training description</label>
-              <textarea required placeholder="Enter training description" id="vertical" class="form-control rc" rows="8"></textarea>
+              <textarea required placeholder="Enter training description" id="vertical" class="form-control rc" rows="8" name="description"></textarea>
             </div>
             <br/>
             <button class="btn btn-primary btn-labeled rc">

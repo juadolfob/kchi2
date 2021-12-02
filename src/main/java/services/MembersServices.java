@@ -73,7 +73,12 @@ public class MembersServices {
 		return vertical;
 	}
 	
-	
+	public String generateId(String lastId) {
+		String prefix = lastId.substring(0, 3);
+		String value = lastId.substring(3, lastId.length());
+		int sufix = Integer.parseInt(value) + 1;
+		return prefix + sufix;
+	}
 	
 //	public static void main(String[] args) {
 //		

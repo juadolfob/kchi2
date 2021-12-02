@@ -17,7 +17,7 @@ public class ParticipantServices {
 		List<TrainingParticipantData> ParticipantsData = new ArrayList<TrainingParticipantData>();
 		
 		Object[] params = new Object[]{RequerimentID};
-		ParticipantsData = (List<TrainingParticipantData>) this.template.queryForObject("select * from TrainingParticipantData where RequirementID = ?", params, new TrainingParticipantMapper());
+		ParticipantsData = this.template.query("select * from TrainingParticipantData where RequirementID = ?", params, new TrainingParticipantMapper());
 	
 		return ParticipantsData;
 	}

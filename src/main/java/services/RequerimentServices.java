@@ -11,6 +11,7 @@ import mappers.LDRoleMapper;
 import mappers.TrainingRequirementMasterMapper;
 import mappers.VerticalMasterMapper;
 import models.LDMemberData;
+import models.TrainingProposals;
 import models.TrainingRequirementMaster;
 
 public class RequerimentServices {
@@ -43,6 +44,12 @@ public class RequerimentServices {
 		List <TrainingRequirementMaster> readalltrainingReq = new ArrayList<TrainingRequirementMaster>();
 		readalltrainingReq = this.template.query("select * from TrainingRequirementMaster", new TrainingRequirementMasterMapper());
 		return readalltrainingReq;
+	}
+	
+	public void aproveRequirement(TrainingRequirementMaster requirement, TrainingProposals proposal) {
+		String id = new MembersServices().getNewId("TrainingExecutionMaster", "ExecutionID");
+		Object[] params = new Object[] {id, requirement.getRequirementID(), proposal.getProposedDate(), proposal.getPropsedTime(), proposal.getMember().getMemberId(), proposal.getProposedDuration(), "Confirmed", requirement.getTotalCandidates()};
+		this.template.update("insert into trainingExecutionMaster values (?, ?, ?, ?, ?, ?, ?, ?)", params);
 	}
 	
 //	public static void main(String[] args) {

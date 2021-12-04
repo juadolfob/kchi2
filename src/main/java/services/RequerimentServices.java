@@ -8,9 +8,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import mappers.LDRoleMapper;
+import mappers.RequirementSendIdMapper;
 import mappers.TrainingRequirementMasterMapper;
 import mappers.VerticalMasterMapper;
 import models.LDMemberData;
+import models.RequirementSendId;
 import models.TrainingRequirementMaster;
 
 public class RequerimentServices {
@@ -45,6 +47,13 @@ public class RequerimentServices {
 		return readalltrainingReq;
 	}
 	
+	
+	public List <RequirementSendId> readSendRequirement(){
+		List <RequirementSendId> requirement = new ArrayList<RequirementSendId>();
+		requirement = this.template.query("select * from RequirementSendId", new RequirementSendIdMapper());
+		return requirement;
+	}
+	
 //	public static void main(String[] args) {
 //		
 //		RequerimentServices requirementServices = new RequerimentServices();
@@ -56,7 +65,15 @@ public class RequerimentServices {
 //		System.out.println("trainingArea: "+ requirementMaster.getTrainingArea());
 //		System.out.println("trainingArea: "+ requirementMaster.getRequirementUserVertical().getVerticalName());
 //		
-////		requirementMaster.getTotalDurationDays()
+//		requirementMaster.getTotalDurationDays()
+//		RequerimentServices requirementServices = new RequerimentServices();
 //		
+//		List <RequirementSendId> requirement = new ArrayList<RequirementSendId>();
+//		requirement = requirementServices.readSendRequirement();
+//		
+//		for (RequirementSendId requirementSendId : requirement) {
+//			System.out.println("ID:" +requirementSendId.getRequestID());
+//			System.out.println("RequirementID:" +requirementSendId.getRequirementID().getRequirementID());
+//		}
 //	}
 }

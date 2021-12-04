@@ -18,7 +18,7 @@ public class LDMemberDataMapper implements RowMapper<LDMemberData>{
 		ldMember.setMemberContact(result.getString("memberContact"));
 		ldMember.setMemberLocation(result.getString("memberLocation"));
 		ldMember.setMemberEmail(result.getString("memberEmail"));
-		return null;
+		return ldMember;
 	}
 
 }

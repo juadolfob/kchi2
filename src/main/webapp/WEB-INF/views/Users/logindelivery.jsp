@@ -38,7 +38,7 @@
           <div style="margin-top: 7rem;">
             <div class="col-7 title-form text-secondary">
               <img src="res/user-solid.svg" width="30" height="30" class="opacity-50" alt="user icon"/>
-   				 <h1> Sign In L&D</h1>
+            <h1>Sign In Delivery</h1>
             </div>
 
 

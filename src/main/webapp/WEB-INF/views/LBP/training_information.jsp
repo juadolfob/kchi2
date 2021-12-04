@@ -46,15 +46,9 @@
     <main>
         <section class="container-card-information">
             <section class="Title">
-                <h1>Business Executive</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                     when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                     It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
-                     essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
-                     Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including 
-                     versions of Lorem Ipsum.
-                </p>
+            <br>
+                <h1>Business Executive Information</h1>
+                <br>
             </section>
             <section class="Trainning-Card">
                         <section class="card-body">
@@ -115,20 +109,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <ul class="list-unstyled">
-                        <li class="fw-bold mb-2"><a href="#" class="text-decoration-none text-muted">Community</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Home</a></li>
-                        <li><a href="#" class="text-decoration-none text-muted">Terms of service</a></li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <ul class="list-unstyled">
-                        <li class="fw-bold mb-2"><a href="#" class="text-decoration-none text-muted">Resources</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">About</a></li>
-                        <li><a href="#" class="text-decoration-none text-muted">Privacy policy</a></li>
-                    </ul>
-                </div>
+            
             </div>
         </div>
     </footer>

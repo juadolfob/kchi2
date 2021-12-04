@@ -62,6 +62,9 @@
             <div class="row">
                 <div class="col-10">
                     <h2>Learning Bussiness Partner</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                        and scrambled it to make a type specimen book.</p>
                 </div>
             </div>
         </div>
@@ -102,10 +105,7 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
-                            <div>
-                                <label>Name:</label>
-                                <label> Juan Carlos Romos Mario</label>
-                            </div>
+                            
                             <div>
                                 <label>Time:</label>
                                 <label> 10:00 am - 02:00 pm</label>
@@ -115,10 +115,7 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
                         <label class="form-check-label" for="flexRadioDefault2">
-                            <div>
-                                <label>Name:</label>
-                                <label> Perez Arriaga</label>
-                            </div>
+                           
                             <div>
                                 <label>Time:</label>
                                 <label> 10:00 am - 02:00 pm</label>
@@ -128,10 +125,7 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
-                            <div>
-                                <label>Name:</label>
-                                <label> Mariana Garcia</label>
-                            </div>
+                            
                             <div>
                                 <label>Time:</label>
                                 <label> 10:00 am - 02:00 pm</label>
@@ -141,10 +135,7 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
                         <label class="form-check-label" for="flexRadioDefault2">
-                            <div>
-                                <label>Name:</label>
-                                <label> Daniel Lopez</label>
-                            </div>
+                           
                             <div>
                                 <label>Time:</label>
                                 <label> 10:00 am - 02:00 pm</label>
@@ -153,10 +144,14 @@
                     </div>
                 </div>
                <br>
-                <button class="btn btn-success btn-labeled b-r">
+               <div class="form-group comment-block">
+                <label for="vertical">Comment</label>
+                <textarea required placeholder="Enter comment" id="vertical" class="form-control b-r" rows="4"></textarea>
+            </div>
+                <a class="btn btn-success btn-labeled b-r">
                     Submit
                     <span class="btn-label"><i class="fas fa-arrow-right"></i></span>
-                </button>
+                </a>
             </div>
         </div>
     </main>
@@ -173,7 +168,7 @@
                         </div>
                     </div>
                 </div>
-             
+                
             </div>
         </div>
     </footer>

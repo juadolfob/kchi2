@@ -70,7 +70,8 @@
             <h5 class="subtitle">Start Learning</h5>
             <h1 class="title">Thinking Forward</h1>
             <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <a type="button" href="signIn" class="btn btn-outline-primary">Get Started</a>
+            <a type="button" href="signIn" class="btn btn-outline-primary">Get Started Delivery</a>
+             <a type="button" href="signIn" class="btn btn-primary">Get Started L&D</a>
           </div>
         </div>
         <div class="col-5">
@@ -158,20 +159,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <ul class="list-unstyled">
-                    <li class="fw-bold mb-2"><a href="#" class="text-decoration-none text-muted">Community</a></li>
-                    <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Home</a></li>
-                    <li><a href="#" class="text-decoration-none text-muted">Terms of service</a></li>
-                </ul>
-            </div>
-            <div class="col">
-                <ul class="list-unstyled">
-                    <li class="fw-bold mb-2"><a href="#" class="text-decoration-none text-muted">Resources</a></li>
-                    <li class="mb-2"><a href="#" class="text-decoration-none text-muted">About</a></li>
-                    <li><a href="#" class="text-decoration-none text-muted">Privacy policy</a></li>
-                </ul>
-            </div>
+            
         </div>
     </div>
 </footer>

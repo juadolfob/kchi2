@@ -50,6 +50,13 @@ public class RequerimentServices {
 		String id = new MembersServices().getNewId("TrainingExecutionMaster", "ExecutionID");
 		Object[] params = new Object[] {id, requirement.getRequirementID(), proposal.getProposedDate(), proposal.getPropsedTime(), proposal.getMember().getMemberId(), proposal.getProposedDuration(), "Confirmed", requirement.getTotalCandidates()};
 		this.template.update("insert into trainingExecutionMaster values (?, ?, ?, ?, ?, ?, ?, ?)", params);
+		//state 3?
+		this.changeRequirementState(requirement.getRequirementID(), 3);
+	}
+	
+	public void changeRequirementState(String requirementId, int state) {
+		Object[] params = new Object[] {state, requirementId};
+		this.template.update("update trainingRequirementMaster set requirementState = ? where requirementID = ?", params);
 	}
 	
 //	public static void main(String[] args) {

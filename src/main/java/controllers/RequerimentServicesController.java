@@ -72,7 +72,7 @@ public class RequerimentServicesController {
 		return "LBP/request_first";
     } 
 	
-	@RequestMapping("/requeriment-all")  
+	@RequestMapping("/requeriment-all")
     public String secondRequest(Model model)  
     {  
 		model.addAttribute("requirements", new RequerimentServices().ReadAllRequestRequeriment());

@@ -12,7 +12,7 @@ import mappers.VerticalMasterMapper;
 import models.LDMemberData;
 import models.LDRoles;
 import models.VerticalMaster;
-
+import models.TrainingProposals;
  
 
 
@@ -101,6 +101,11 @@ public class MembersServices {
 		return vertical;
 	}
 	
+	public void registerSlot(String trainingRequest, TrainingProposals proposal) {
+
+		Object[] params = new Object[]{proposal.getProposalID(), proposal.getProposedDate(), proposal.getProposedDuration(), proposal.getPropsedTime(), proposal.getMember(), proposal.getMemberID()};
+		this.template.update("insert into TrainingProposals values(?,?,?,?,?,?)", params);
+	}
 //	public static void main(String[] args) {
 //		
 //		MembersServices showdatas = new MembersServices();

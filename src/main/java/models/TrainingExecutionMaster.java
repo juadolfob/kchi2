@@ -5,13 +5,13 @@ import java.util.Date;
 public class TrainingExecutionMaster {
 
 	private String executionID;
-	private Date confiredDate;
-	private String confirmTime;
+	private Date confirmedDate;
+	private String confirmedTime;
 	private int totalHRS;
-	private String propsalStatus;
-	private int totalParticpantsAllowed;
-	private TrainingRequirementMaster requirementID;
-	private LDMemberData trainer;
+	private String proposalStatus;
+	private int totalParticipantsAllowed;
+	private String requirementID;
+	private String trainerID;
 	
 	public String getExecutionID() {
 		return executionID;
@@ -19,17 +19,17 @@ public class TrainingExecutionMaster {
 	public void setExecutionID(String executionID) {
 		this.executionID = executionID;
 	}
-	public Date getConfiredDate() {
-		return confiredDate;
+	public Date getConfirmedDate() {
+		return confirmedDate;
 	}
-	public void setConfiredDate(Date confiredDate) {
-		this.confiredDate = confiredDate;
+	public void setConfirmedDate(Date confirmedDate) {
+		this.confirmedDate = confirmedDate;
 	}
-	public String getConfirmTime() {
-		return confirmTime;
+	public String getConfirmedTime() {
+		return confirmedTime;
 	}
-	public void setConfirmTime(String confirmTime) {
-		this.confirmTime = confirmTime;
+	public void setConfirmedTime(String confirmTime) {
+		this.confirmedTime = confirmTime;
 	}
 	public int getTotalHRS() {
 		return totalHRS;
@@ -37,28 +37,28 @@ public class TrainingExecutionMaster {
 	public void setTotalHRS(int totalHRS) {
 		this.totalHRS = totalHRS;
 	}
-	public String getPropsalStatus() {
-		return propsalStatus;
+	public String getProposalStatus() {
+		return proposalStatus;
 	}
-	public void setPropsalStatus(String propsalStatus) {
-		this.propsalStatus = propsalStatus;
+	public void setProposalStatus(String propsalStatus) {
+		this.proposalStatus = propsalStatus;
 	}
-	public int getTotalParticpantsAllowed() {
-		return totalParticpantsAllowed;
+	public int getTotalParticipantsAllowed() {
+		return totalParticipantsAllowed;
 	}
-	public void setTotalParticpantsAllowed(int totalParticpantsAllowed) {
-		this.totalParticpantsAllowed = totalParticpantsAllowed;
+	public void setTotalParticipantsAllowed(int totalParticpantsAllowed) {
+		this.totalParticipantsAllowed = totalParticpantsAllowed;
 	}
-	public TrainingRequirementMaster getRequirementID() {
+	public String getRequirementID() {
 		return requirementID;
 	}
-	public void setRequirementID(TrainingRequirementMaster requirementID) {
-		this.requirementID = requirementID;
+	public void setRequirementID(String requirementId) {
+		this.requirementID = requirementId;
 	}
-	public LDMemberData getTrainer() {
-		return trainer;
+	public String getTrainerID() {
+		return trainerID;
 	}
-	public void setTrainer(LDMemberData trainer) {
-		this.trainer = trainer;
+	public void setTrainerID(String string) {
+		this.trainerID = string;
 	}
 }

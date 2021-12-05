@@ -9,28 +9,42 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import mappers.LDRoleMapper;
 import mappers.TrainingRequirementMasterMapper;
+import mappers.TrainingExecutionMasterMapper;
 import mappers.VerticalMasterMapper;
 import models.LDMemberData;
 import models.TrainingRequirementMaster;
+import models.TrainingExecutionMaster;
 
 public class RequerimentServices {
 	
 	JdbcTemplate template;
 
 	public RequerimentServices() {
-	ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-	this.template = (JdbcTemplate) context.getBean("mytemp");
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+		this.template = (JdbcTemplate) context.getBean("mytemp");
 	}
 
 	
-	public TrainingRequirementMaster createRequestRequeriment(TrainingRequirementMaster trainingRequirementMaster ){
-		Object[] params = new Object[]{trainingRequirementMaster.getRequirementID(), trainingRequirementMaster.getRequirementReceivedDate(), trainingRequirementMaster.getRequirementUser(), trainingRequirementMaster.getRequirementUserVertical().getVid(), trainingRequirementMaster.getTrainingArea(), trainingRequirementMaster.getTrainingDescription(), trainingRequirementMaster.getRequestedTrainingStartDate(), trainingRequirementMaster.getTotalCandidates(), trainingRequirementMaster.getTrainingTimeZone(), trainingRequirementMaster.getTotalDurationDays()};
+	public TrainingRequirementMaster createRequestRequeriment(TrainingRequirementMaster trainingRequirementMaster ) {
+		Object[] params = new Object[]{
+			trainingRequirementMaster.getRequirementID(), 
+			trainingRequirementMaster.getRequirementReceivedDate(), 
+			trainingRequirementMaster.getRequirementUser(), 
+			trainingRequirementMaster.getRequirementUserVertical().getVid(), 
+			trainingRequirementMaster.getTrainingArea(), 
+			trainingRequirementMaster.getTrainingDescription(), 
+			trainingRequirementMaster.getRequestedTrainingStartDate(), 
+			trainingRequirementMaster.getTotalCandidates(), 
+			trainingRequirementMaster.getTrainingTimeZone(), 
+			trainingRequirementMaster.getTotalDurationDays()
+		};
+		
 		this.template.update("insert into trainingRequirementMaster values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", params);
 		TrainingRequirementMaster newRequirement = this.ReadRequestRequeriment(trainingRequirementMaster.getRequirementID());
 		return newRequirement;
 	}
 
-	public TrainingRequirementMaster ReadRequestRequeriment(String RequerimentID){
+	public TrainingRequirementMaster ReadRequestRequeriment(String RequerimentID) {
 		TrainingRequirementMaster readtrainingReq = new TrainingRequirementMaster();
 		Object[] params = new Object[]{RequerimentID};
 		readtrainingReq = this.template.queryForObject("select * from TrainingRequirementMaster where requirementid = ?", params, new TrainingRequirementMasterMapper());
@@ -39,10 +53,18 @@ public class RequerimentServices {
 	}
 	
 	
-	public List <TrainingRequirementMaster> ReadAllRequestRequeriment(){
+	public List <TrainingRequirementMaster> ReadAllRequestRequeriment() {
 		List <TrainingRequirementMaster> readalltrainingReq = new ArrayList<TrainingRequirementMaster>();
 		readalltrainingReq = this.template.query("select * from TrainingRequirementMaster", new TrainingRequirementMasterMapper());
 		return readalltrainingReq;
+	}
+	
+	public TrainingExecutionMaster GetApprove(String requestID) {
+		TrainingExecutionMaster trainingExecution;
+		
+		
+		
+		return trainingExecution;
 	}
 	
 //	public static void main(String[] args) {

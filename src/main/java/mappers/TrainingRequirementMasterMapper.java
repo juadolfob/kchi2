@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.RowMapper;
 import models.TrainingRequirementMaster;
 import services.MembersServices;
 
-public class TrainingRequirementMasterMapper implements RowMapper<TrainingRequirementMaster>{
+public class TrainingRequirementMasterMapper implements RowMapper<TrainingRequirementMaster> {
 
 	@Override
 	public TrainingRequirementMaster mapRow(ResultSet result, int arg1) throws SQLException {

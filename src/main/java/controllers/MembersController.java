@@ -19,12 +19,12 @@ public class MembersController {
     @RequestMapping("/members")  
     public String main()
     {  
-		return "LBP/index";
+		return "LBP/LDPRequest";
     } 
 	@RequestMapping("/signIn")  
     public String signin()  
     {  
-		return "Users/login";
+		return "Users/logindelivery";
     }
      
 	@RequestMapping("/signUp")  

@@ -58,9 +58,7 @@
                             </ul>
                         </li>
                     </ul>
-                    <button type="button" class="btn btn-primary">
-                        <img src="res/plus-solid.svg" alt="plus-solid" width="13" class="mb-1 me-1 filter-white" width="13">
-                        New Request</button>
+                  
                     <div class="dropdown bg-white rounded-circle p-2 ms-4 me-5">
                         <a class="dropdown-toggle dropdown-noicon" href="#" id="userDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -76,17 +74,11 @@
     </header>
     
     <div class="container" style="margin-top: 3rem;">
-        <div class="row">
-            <div class="col-8">
-                <h2>Welcome to Training management panel</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book.</p>
-            </div>
-        </div>
-        <div class="row" style="margin-top: 1.5rem;">
+        
+          <div class="row" style="margin-top: 1.5rem;">
             <div class="col-12">
-                <h5>Status <i class="fas fa-arrow-down"></i></h5>
+                <a type="button" href="#" class="btn"><h5> <i class="fas fa-plus"></i>
+                    New Request</h5></a>
             </div>
         </div>
         <div class="row" style="margin-top: 2rem;">
@@ -142,36 +134,23 @@
         </div>
     </div>
 
-    <footer class="bg-light w-100 mt-auto mx-0">
-        <div class="container">
-            <div class="row my-5">
-                <div class="col-5">
-                    <div class="d-flex flex-column">
-                        <div class="mb-5">
-                            <img src="res/atos-blue-logo.jfif" alt="atos logo" width="100">
-                        </div>
-                        <div class="mt-5">
-                            2021 ATOS, All rights reserved
-                        </div>
+<footer class="bg-light w-100 mt-auto mx-0">
+    <div class="container">
+        <div class="row my-5">
+            <div class="col-5">
+                <div class="d-flex flex-column">
+                    <div class="mb-5">
+                        <img src="res/atos-blue-logo.jfif" alt="atos logo" width="100">
+                    </div>
+                    <div class="mt-5">
+                        2021 ATOS, All rights reserved
                     </div>
                 </div>
-                <div class="col">
-                    <ul class="list-unstyled">
-                        <li class="fw-bold mb-2"><a href="#" class="text-decoration-none text-muted">Community</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Home</a></li>
-                        <li><a href="#" class="text-decoration-none text-muted">Terms of service</a></li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <ul class="list-unstyled">
-                        <li class="fw-bold mb-2"><a href="#" class="text-decoration-none text-muted">Resources</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">About</a></li>
-                        <li><a href="#" class="text-decoration-none text-muted">Privacy policy</a></li>
-                    </ul>
-                </div>
             </div>
+            
         </div>
-    </footer>
+    </div>
+</footer>
 </body>
 
 </html>

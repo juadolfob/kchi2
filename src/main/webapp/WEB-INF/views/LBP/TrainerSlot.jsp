@@ -100,58 +100,46 @@
                 </div>
             </div>
             <div class="col">
-                <h4>Choose trainer slots</h4>
-                <div id="trainer-list">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            
-                            <div>
-                                <label>Time:</label>
-                                <label> 10:00 am - 02:00 pm</label>
-                            </div>
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                           
-                            <div>
-                                <label>Time:</label>
-                                <label> 10:00 am - 02:00 pm</label>
-                            </div>
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            
-                            <div>
-                                <label>Time:</label>
-                                <label> 10:00 am - 02:00 pm</label>
-                            </div>
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                           
-                            <div>
-                                <label>Time:</label>
-                                <label> 10:00 am - 02:00 pm</label>
-                            </div>
-                        </label>
-                    </div>
+                <h4>Create New Slot</h4>
+                
+              <form action="registerSlot">
+              <div class="form-group">
+                <label for="slot_date" class="form-label">Proposed Date</label>
+                <div class="icon-input">
+                  <input name="slot_date" type="date" required placeholder="Enter date" id="slot_date" class="form-control padding-inputs redondeo"/>
                 </div>
-               <br>
+              </div>
+              <div class="form-group">
+                <label for="slot_time" class="form-label">Proposed Time</label>
+                <select  class="form-select" name="slot_time">
+                	<option value="07:00 AM">07:00 AM</option>
+                	<option value="08:00 AM">08:00 AM</option>
+                	<option value="09:00 AM">09:00 AM</option>
+                	<option value="10:00 AM">10:00 AM</option>
+                	<option value="11:00 AM">11:00 AM</option>
+                	<option value="12:00 PM">12:00 PM</option>
+                	<option value="01:00 PM">01:00 PM</option>
+                	<option value="02:00 PM">02:00 PM</option>
+                	<option value="03:00 PM">03:00 PM</option>
+                	<option value="04:00 PM">04:00 PM</option>
+                	<option value="05:00 PM">05:00 PM</option>
+                	<option value="06:00 PM">06:00 PM</option>
+                	<option value="07:00 PM">07:00 PM</option>
+                	<option value="08:00 PM">08:00 PM</option>
+                </select>
+              </div>
+                 <div class="form-group">
+                <label for="slot_duration" class="form-label">Proposed Duration</label>
+                <div class="icon-input">
+                  <input name="slot_duration" type="number" required placeholder="Enter duration" id="slot_duration" class="form-control padding-inputs redondeo"/>
+                </div>
+              </div>
                <div class="form-group comment-block">
                 <label for="vertical">Comment</label>
                 <textarea required placeholder="Enter comment" id="vertical" class="form-control b-r" rows="4"></textarea>
             </div>
-                <a class="btn btn-success btn-labeled b-r">
-                    Submit
-                    <span class="btn-label"><i class="fas fa-arrow-right"></i></span>
-                </a>
+                <input type="submit" class="btn btn-success btn-labeled" value="Submit" />
+             </form>
             </div>
         </div>
     </main>

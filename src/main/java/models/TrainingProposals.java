@@ -3,24 +3,43 @@ package models;
 import java.util.Date;
 
 public class TrainingProposals {
-
-	public String getExecutionID() {
-		return ExecutionID;
+	private String proposalID;
+	private TrainingRequirementMaster requirementID;
+	private int selected;
+	private LDMemberData memberID;
+	private String proposedDate;
+	private String PropsedTime;
+	private int ProposedDuration;
+	
+	public String getProposalID() {
+		return proposalID;
 	}
-	public void setExecutionID(String executionID) {
-		ExecutionID = executionID;
+	public void setProposalID(String proposalID) {
+		this.proposalID = proposalID;
 	}
-	public Date getProposedDate() {
+	public TrainingRequirementMaster getRequirementID() {
+		return requirementID;
+	}
+	public void setRequirementID(TrainingRequirementMaster requirementID) {
+		this.requirementID = requirementID;
+	}
+	public int getSelected() {
+		return selected;
+	}
+	public void setSelected(int selected) {
+		this.selected = selected;
+	}
+	public LDMemberData getMemberID() {
+		return memberID;
+	}
+	public void setMemberID(LDMemberData memberID) {
+		this.memberID = memberID;
+	}
+	public String getProposedDate() {
 		return proposedDate;
 	}
-	public void setProposedDate(Date proposedDate) {
+	public void setProposedDate(String proposedDate) {
 		this.proposedDate = proposedDate;
-	}
-	public LDMemberData getMember() {
-		return member;
-	}
-	public void setMember(LDMemberData member) {
-		this.member = member;
 	}
 	public String getPropsedTime() {
 		return PropsedTime;
@@ -34,26 +53,4 @@ public class TrainingProposals {
 	public void setProposedDuration(int proposedDuration) {
 		ProposedDuration = proposedDuration;
 	}
-	public int getMemberID() {
-		return memberID;
-	}
-	public void setMemberID(int memberID) {
-		this.memberID = memberID;
-	}
-	public String getProposalID() {
-		return proposalID;
-	}
-	public void setProposalID(String proposalID) {
-		this.proposalID = proposalID;
-	}
-	
-	private String ExecutionID;
-	private Date proposedDate;
-	private LDMemberData member;
-	private String PropsedTime;
-	private int ProposedDuration;
-	private int memberID;
-	private String proposalID;
-	
-	
 }

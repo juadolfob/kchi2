@@ -101,10 +101,9 @@ public class MembersServices {
 		return vertical;
 	}
 	
-	public void registerSlot(String trainingRequest, TrainingProposals proposal) {
-
-		Object[] params = new Object[]{proposal.getProposalID(), proposal.getProposedDate(), proposal.getProposedDuration(), proposal.getPropsedTime(), proposal.getMember(), proposal.getMemberID()};
-		this.template.update("insert into TrainingProposals values(?,?,?,?,?,?)", params);
+	public void registerSlot(TrainingProposals proposal) {
+		Object[] params = new Object[]{proposal.getProposalID(),proposal.getRequirementID().getRequirementID(), proposal.getSelected(), proposal.getMemberID().getMemberId(), proposal.getProposedDate(), proposal.getPropsedTime(), proposal.getProposedDuration()};
+		this.template.update("insert into TrainingProposals values(?,?,?,?,?,?,?)", params);
 	}
 //	public static void main(String[] args) {
 //		

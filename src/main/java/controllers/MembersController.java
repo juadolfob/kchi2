@@ -1,6 +1,10 @@
 package controllers;
 
+import java.util.Date;
 import java.util.List;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;  
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import models.LDMemberData;
 import models.LDRoles;
+import models.TrainingProposals;
+import models.TrainingRequirementMaster;
 import services.MembersServices;
 
 
@@ -46,9 +52,9 @@ public class MembersController {
 	 {
 		LDRoles role = new LDRoles();
 		String memberId = "MEM20";
-		String memberName = servlet.getParameter("user_name");;
+		String memberName = servlet.getParameter("user_name");
 		String memberContact = servlet.getParameter("user_contact");
-		String memberLocation = servlet.getParameter("user_city");;
+		String memberLocation = servlet.getParameter("user_city");
 		String memberEmail = servlet.getParameter("user_email");
 		String ldRoleID = servlet.getParameter("ldrole");
 		role.setLdRoleID(ldRoleID);
@@ -72,5 +78,46 @@ public class MembersController {
 
 		return "LBP/landing-page";
 	 }
+	
+	@RequestMapping("/newSlot")  
+	 public String  newSlot(HttpServletRequest servlet)
+	   {  
+			return "LBP/TrainerSlot";
+	   }
+	
+	@RequestMapping("/registerSlot")  
+	 public String  registerSlot(HttpServletRequest servlet) throws ParseException
+	   {  
+			TrainingProposals proposal = new TrainingProposals();
+			TrainingRequirementMaster reqID = new TrainingRequirementMaster();
+			LDMemberData member = new LDMemberData();
+			
+			String proposalID = "PR021";
+			reqID.setRequirementID("TRM004");
+			int selected = 0;
+			member.setMemberId("MEM04");
+			String proposedDate = servlet.getParameter("slot_date");
+			String PropsedTime = servlet.getParameter("slot_time");
+			int ProposedDuration = Integer.parseInt(servlet.getParameter("slot_duration"));
+			
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MMM-yy");
+			System.out.println(sdf2.format(sdf.parse(proposedDate)));
+			
+			
+			TrainingProposals newproposal = new TrainingProposals();
+			newproposal.setProposalID(proposalID);
+			newproposal.setRequirementID(reqID);
+			newproposal.setSelected(selected);
+			newproposal.setMemberID(member);
+			newproposal.setProposedDate(sdf2.format(sdf.parse(proposedDate)));
+			newproposal.setPropsedTime(PropsedTime);
+			newproposal.setProposedDuration(ProposedDuration);
+			
+			MembersServices memservice = new MembersServices();
+			memservice.registerSlot(newproposal);
+			
+			return "LBP/landing-page";
+	   }
 	
 }

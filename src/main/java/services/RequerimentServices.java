@@ -99,10 +99,10 @@ public class RequerimentServices {
 		return requirement;
 	}
 	
-	public void selectSlot(List <TrainingProposals> proposals) {
+	public void selectSlot(List <TrainingProposals> proposals) { 
 		for (TrainingProposals trainingProposals : proposals) {
 			Object[] params = new Object[] {1, trainingProposals.getProposalID()};
-			this.template.update("update TrainingProposals set SELECTED = ? where requirementID = ?",params);
+			this.template.update("update TrainingProposals set SELECTED = ? where proporsalID = ?",params);
 		}
 	}
 	

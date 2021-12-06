@@ -2,6 +2,7 @@ package controllers;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -100,7 +101,15 @@ public class RequerimentServicesController {
 	
 	@RequestMapping("/select-slot")
 	public String selectSlot(HttpServletRequest servlet) {
+		String [] proposalsRequest = servlet.getParameterValues("proposal");
+		List <TrainingProposals> proposals = new ArrayList<TrainingProposals>();
+		RequerimentServices requirementServices = new RequerimentServices();
 		
-		return "Users/logindelivery";
+		for (String proposal : proposalsRequest) {
+			proposals.add(new TrainerService().getSlot(proposal));
+		}
+		
+		requirementServices.selectSlot(proposals);
+		return "redirect:/requeriment-all";
 	}
 }

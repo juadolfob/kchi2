@@ -1,19 +1,19 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
+=======
+<%@ include file="../includes/include.jsp"%>
+>>>>>>> Adolfo
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/request_second.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    <title>Training Request Options</title>
+<%@ include file="../includes/meta.jsp"%>
+<link rel="stylesheet" href="css/request_second.css">
+<title>Training Request Options</title>
 </head>
 <body>
+<<<<<<< HEAD
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary opacity-90 ps-2 pe-5 py-0">
             <div class="container-fluid px-5 py-0">
@@ -144,5 +144,102 @@
             </div>
         </div>
     </footer>
+=======
+	<%@ include file="../includes/header_private.jsp"%>
+	<main class="container">
+		<div class=" header">
+			<div class="row">
+				<div class="col-10">
+					<h2>Learning Bussiness Partner</h2>
+				</div>
+			</div>
+		</div>
+		<div class="row request-content">
+			<div class="col">
+				<div class="card border-success mb-3 b-r">
+					<div class="card-body">
+						<h5 class="card-title card-h">
+							<i class="fas fa-users"></i> Java full-stack Training
+						</h5>
+						<ul class="info-list">
+							<li><b class="block">Id:</b> <label class="block">26105671</label>
+							</li>
+							<li><b class="block">User vertical:</b> <label class="block">Mahesh
+									Rajput</label></li>
+							<li><b class="block">User training area:</b> <label
+								class="block">Java Full-Stack</label></li>
+							<li><b class="block">User training start date:</b> <label
+								class="block">22 / 11 / 2021</label></li>
+							<li><b class="block">Total candidates:</b> <label
+								class="block">30</label></li>
+							<li><b class="block">User training time zone:</b> <label
+								class="block">(GMT + 5:30)</label></li>
+							<li><b class="block">Total duration dates:</b> <label
+								class="block">60 days</label></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<h4>Choose trainer slots</h4>
+				<div id="trainer-list">
+					<div class="form-check">
+						<input class="form-check-input" type="radio"
+							name="flexRadioDefault" id="flexRadioDefault1"> <label
+							class="form-check-label" for="flexRadioDefault1">
+							<div>
+								<label>Name:</label> <label> Juan Carlos Romos Mario</label>
+							</div>
+							<div>
+								<label>Time:</label> <label> 10:00 am - 02:00 pm</label>
+							</div>
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio"
+							name="flexRadioDefault" id="flexRadioDefault2" checked> <label
+							class="form-check-label" for="flexRadioDefault2">
+							<div>
+								<label>Name:</label> <label> Perez Arriaga</label>
+							</div>
+							<div>
+								<label>Time:</label> <label> 10:00 am - 02:00 pm</label>
+							</div>
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio"
+							name="flexRadioDefault" id="flexRadioDefault1"> <label
+							class="form-check-label" for="flexRadioDefault1">
+							<div>
+								<label>Name:</label> <label> Mariana Garcia</label>
+							</div>
+							<div>
+								<label>Time:</label> <label> 10:00 am - 02:00 pm</label>
+							</div>
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio"
+							name="flexRadioDefault" id="flexRadioDefault2" checked> <label
+							class="form-check-label" for="flexRadioDefault2">
+							<div>
+								<label>Name:</label> <label> Daniel Lopez</label>
+							</div>
+							<div>
+								<label>Time:</label> <label> 10:00 am - 02:00 pm</label>
+							</div>
+						</label>
+					</div>
+				</div>
+				<br>
+				<button class="btn btn-success btn-labeled b-r">
+					Submit <span class="btn-label"><i class="fas fa-arrow-right"></i></span>
+				</button>
+			</div>
+		</div>
+	</main>
+	<%@ include file="../includes/footer.jsp"%>
+>>>>>>> Adolfo
 </body>
 </html>

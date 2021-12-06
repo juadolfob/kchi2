@@ -3,6 +3,7 @@ package controllers;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,9 +14,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import models.TrainingProposals;
 import models.TrainingRequirementMaster;
 import services.MembersServices;
 import services.RequerimentServices;
+import services.TrainerService;
 
 @Controller
 public class RequerimentServicesController {
@@ -60,8 +63,13 @@ public class RequerimentServicesController {
     } 
 
 	@RequestMapping("/firstRequestSendSecond")
-	 public String firstRequestSendSecond(HttpServletRequest servlet)
+	 public String firstRequestSendSecond(HttpServletRequest servlet, ModelMap model)
 	 {
+		String requirementId = servlet.getParameter("requirementId");
+		TrainingRequirementMaster requirement = new RequerimentServices().ReadRequestRequeriment(requirementId);
+		List<TrainingProposals> proposals = new TrainerService().getSelectedProposals(requirementId);
+		model.addAttribute("requirement", requirement);
+		model.addAttribute("proposals", proposals);
 		return "LBP/request_second";
 	 }
 	
@@ -78,5 +86,15 @@ public class RequerimentServicesController {
 		model.addAttribute("requirements", new RequerimentServices().ReadAllRequestRequeriment());
 		return "LBP/landing-page";
     } 
-
+	
+	@RequestMapping("/aproveRequirement")
+	public ModelAndView aproveRequirement(HttpServletRequest servlet) {
+		String requirementId = servlet.getParameter("requirementId");
+		String proposalId = servlet.getParameter("proposalId");
+		RequerimentServices requirementService = new RequerimentServices();
+		TrainingRequirementMaster requirement = requirementService.ReadRequestRequeriment(requirementId);
+		TrainingProposals proposal = new TrainerService().getSlot(proposalId);
+		requirementService.aproveRequirement(requirement, proposal);
+		return new ModelAndView("redirect:/requeriment-all");
+	}
 }

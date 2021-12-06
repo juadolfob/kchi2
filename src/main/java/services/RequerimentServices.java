@@ -99,10 +99,17 @@ public class RequerimentServices {
 		return requirement;
 	}
 	
+	public void selectSlot(List <TrainingProposals> proposals) {
+		for (TrainingProposals trainingProposals : proposals) {
+			Object[] params = new Object[] {1, trainingProposals.getProposalID()};
+			this.template.update("update TrainingProposals set SELECTED = ? where requirementID = ?",params);
+		}
+	}
+	
 //	public static void main(String[] args) {
-//		
-//		RequerimentServices requirementServices = new RequerimentServices();
 		
+//		RequerimentServices requirementServices = new RequerimentServices();
+//		
 //		TrainingRequirementMaster requirementMaster = requirementServices.ReadRequestRequeriment("TRM001");
 //		System.out.println("Id: "+ requirementMaster.getRequirementID());
 //		System.out.println("RequirementReceivedData: "+ requirementMaster.getRequirementReceivedDate());
@@ -112,14 +119,13 @@ public class RequerimentServices {
 //		
 //		requirementMaster.getTotalDurationDays()
 //		RequerimentServices requirementServices = new RequerimentServices();
-		
-//		List <TrainingRequirementMaster> requirement = new ArrayList<TrainingRequirementMaster>();
-//		requirement = requirementServices.readSendRequirement();
-//		
-//		for (TrainingRequirementMaster trainingRequirementMaster : requirement) {
-//			System.out.println(trainingRequirementMaster.getRequirementID());
-//			System.out.println(trainingRequirementMaster.getTrainingArea());
-//			System.out.println("--------------");
+//		List <TrainingProposals> proposals = new TrainerService().getAllSlot();
+//		System.out.println("srivo");
+//		for (TrainingProposals trainingProposals : proposals) {
+//			System.out.println(trainingProposals.getProposalID());
 //		}
+//		requirementServices.selectSlot(proposals);
+//		requirement = requirementServices.readSendRequirement();
+		
 //	}
 }

@@ -43,8 +43,6 @@ public class TrainerService {
 	public TrainingProposals getSlot(String proposalId){
 		TrainingProposals trainingApprove;
 		trainingApprove = this.template.queryForObject("select * from TrainingProposals where proporsalID = ?", new Object[]{proposalId}, new TrainingProposalsMapper());
-		LDMemberData member = this.template.queryForObject("select * from LDMemberData where MemberID = ?", new Object[]{trainingApprove.getMemberID()}, new LDMembermapper());
-		trainingApprove.setMember(member);
 		return trainingApprove;
 	}
 	

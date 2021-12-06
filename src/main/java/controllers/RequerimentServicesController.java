@@ -15,13 +15,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+
 import mappers.TrainingParticipantMapper;
 import models.LDRoles;
 import models.TrainingParticipantData;
+
+import models.TrainingProposals;
+
 import models.TrainingRequirementMaster;
 import services.MembersServices;
 import services.ParticipantServices;
 import services.RequerimentServices;
+import services.TrainerService;
 
 @Controller
 public class RequerimentServicesController {
@@ -66,8 +71,13 @@ public class RequerimentServicesController {
     } 
 
 	@RequestMapping("/firstRequestSendSecond")
-	 public String firstRequestSendSecond(HttpServletRequest servlet)
+	 public String firstRequestSendSecond(HttpServletRequest servlet, ModelMap model)
 	 {
+		String requirementId = servlet.getParameter("requirementId");
+		TrainingRequirementMaster requirement = new RequerimentServices().ReadRequestRequeriment(requirementId);
+		List<TrainingProposals> proposals = new TrainerService().getSelectedProposals(requirementId);
+		model.addAttribute("requirement", requirement);
+		model.addAttribute("proposals", proposals);
 		return "LBP/request_second";
 	 }
 	
@@ -85,13 +95,6 @@ public class RequerimentServicesController {
 		return "LBP/landing-page";
     } 
 	
-	
-	
-	
-	
-	
-	
-	
 	@RequestMapping("/requeriment/{id}")  
     public String trainingInf(Model model, @PathVariable String id) 
     {  
@@ -99,22 +102,26 @@ public class RequerimentServicesController {
 		model.addAttribute("requirement", new RequerimentServices().ReadRequestRequeriment(id));
 		List<TrainingParticipantData> ParticipantsDatalist = new ParticipantServices().getParticipants(id);
 		model.addAttribute("participandatalist",ParticipantsDatalist);
-		
-		
-		
-		
+
 		return "LBP/training_information";
     } 
 
+
+	@RequestMapping("/aproveRequirement")
+	public ModelAndView aproveRequirement(HttpServletRequest servlet) {
+		String requirementId = servlet.getParameter("requirementId");
+		String proposalId = servlet.getParameter("proposalId");
+		RequerimentServices requirementService = new RequerimentServices();
+		TrainingRequirementMaster requirement = requirementService.ReadRequestRequeriment(requirementId);
+		TrainingProposals proposal = new TrainerService().getSlot(proposalId);
+		requirementService.aproveRequirement(requirement, proposal);
+		return new ModelAndView("redirect:/requeriment-all");
+	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@RequestMapping("/select-slot")
+	public String selectSlot(HttpServletRequest servlet) {
+		
+		return "Users/logindelivery";
+	}
+
 }

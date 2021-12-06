@@ -1,35 +1,42 @@
-.titletwo{
-  text-align: center;
-  color: rgb(116, 116, 116);
+.titletwo {
+	text-align: center;
+	color: rgb(116, 116, 116);
 }
-.titlethree{
-  text-align: center;
-  margin-bottom: 20px;
-  color: rgb(158, 158, 158);
-}
-.paragraphtwo{
-  text-align: center;
-  color: rgb(116, 116, 116);
-}
-.content-inf{
-  color: rgb(175, 175, 175);
-  text-align: center;
-}
-.content-about{
-  background:rgb(245, 245, 245);
-}
-.img-logo{
-  padding: 15px;
-width: 130px;
-}
-.title{
-  color: #2073e0;
-  font-size: 50px;
-}
-.subtitle{
-  color: rgb(75, 75, 75);
-}
-.paragraph{
- color: rgb(88, 88, 88);
 
+.titlethree {
+	text-align: center;
+	margin-bottom: 20px;
+	color: rgb(158, 158, 158);
+}
+
+.paragraphtwo {
+	text-align: center;
+	color: rgb(116, 116, 116);
+}
+
+.content-inf {
+	color: rgb(175, 175, 175);
+	text-align: center;
+}
+
+.content-about {
+	background: rgb(245, 245, 245);
+}
+
+.img-logo {
+	padding: 15px;
+	width: 130px;
+}
+
+.title {
+	color: #2073e0;
+	font-size: 50px;
+}
+
+.subtitle {
+	color: rgb(75, 75, 75);
+}
+
+.paragraph {
+	color: rgb(88, 88, 88);
 }

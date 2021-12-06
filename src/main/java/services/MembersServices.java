@@ -88,10 +88,20 @@ public class MembersServices {
 		return vertical;
 	}
 	
+	public String getNewId(String tableName, String keyFieldName) {
+		String lastId = this.template.queryForObject("select " + keyFieldName + " from " + tableName + " where rownum = 1 order by " + keyFieldName + " desc", String.class);
+		String newId = this.generateId(lastId);
+		return newId;
+	}
+	
 	public String generateId(String lastId) {
 		String prefix = lastId.substring(0, 3);
 		String value = lastId.substring(3, lastId.length());
-		int sufix = Integer.parseInt(value) + 1;
+		int newValue = Integer.parseInt(value) + 1;
+		String sufix = newValue + "";
+//		while (sufix.length() < 3) {
+//			sufix = "0" + sufix;
+//		}
 		return prefix + sufix;
 	}
 	
@@ -101,10 +111,9 @@ public class MembersServices {
 		return vertical;
 	}
 	
-	public void registerSlot(String trainingRequest, TrainingProposals proposal) {
-
-		Object[] params = new Object[]{proposal.getProposalID(), proposal.getProposedDate(), proposal.getProposedDuration(), proposal.getPropsedTime(), proposal.getMember(), proposal.getMemberID()};
-		this.template.update("insert into TrainingProposals values(?,?,?,?,?,?)", params);
+	public void registerSlot(TrainingProposals proposal) {
+		Object[] params = new Object[]{proposal.getProposalID(),proposal.getRequirementID().getRequirementID(), proposal.getSelected(), proposal.getMemberID().getMemberId(), proposal.getProposedDate(), proposal.getPropsedTime(), proposal.getProposedDuration()};
+		this.template.update("insert into TrainingProposals values(?,?,?,?,?,?,?)", params);
 	}
 //	public static void main(String[] args) {
 //		
@@ -116,6 +125,14 @@ public class MembersServices {
 //		}
 //		
 //	}
+
+
+
+
+	public String getNewId(String string, String string2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }

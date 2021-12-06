@@ -40,14 +40,16 @@ public class TrainerService {
 		
 	}
 	
-	public TrainingProposals GetApproveSlot(String executionID){
+	public TrainingProposals getSlot(String proposalId){
 		TrainingProposals trainingApprove;
-		trainingApprove = this.template.queryForObject("select * from TrainingProposals where ExecutionID = ?", new Object[]{executionID}, new TrainingProposalsMapper());
-		LDMemberData member = this.template.queryForObject("select * from LDMemberData where MemberID = ?", new Object[]{trainingApprove.getMemberID()}, new LDMembermapper());
-		trainingApprove.setMember(member);
+		trainingApprove = this.template.queryForObject("select * from TrainingProposals where proporsalID = ?", new Object[]{proposalId}, new TrainingProposalsMapper());
 		return trainingApprove;
 	}
 	
-	
+	public List<TrainingProposals> getSelectedProposals(String requirementId) {
+		Object[] params = new Object[]{requirementId, 1};
+		List<TrainingProposals> proposals = this.template.query("select * from trainingProposals where requirementId = ? and selected = ?", params, new TrainingProposalsMapper());
+		return proposals;
+	}
 	
 }

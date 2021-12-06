@@ -64,7 +64,7 @@ public class RequerimentServices {
 	
 	public void aproveRequirement(TrainingRequirementMaster requirement, TrainingProposals proposal) {
 		String id = new MembersServices().getNewId("TrainingExecutionMaster", "ExecutionID");
-		Object[] params = new Object[] {id, requirement.getRequirementID(), proposal.getProposedDate(), proposal.getPropsedTime(), proposal.getMember().getMemberId(), proposal.getProposedDuration(), "Confirmed", requirement.getTotalCandidates()};
+		Object[] params = new Object[] {id, requirement.getRequirementID(), proposal.getProposedDate(), proposal.getPropsedTime(), proposal.getMemberID().getMemberId(), proposal.getProposedDuration(), "Confirmed", requirement.getTotalCandidates()};
 		this.template.update("insert into trainingExecutionMaster values (?, ?, ?, ?, ?, ?, ?, ?)", params);
 		//state 3?
 		this.changeRequirementState(requirement.getRequirementID(), 3);
@@ -89,14 +89,25 @@ public class RequerimentServices {
 		return trainingExecution;
 	}
 	
-	public List <RequirementSendId> readSendRequirement(){
-		List <RequirementSendId> requirement = new ArrayList<RequirementSendId>();
-		requirement = this.template.query("select * from RequirementSendId", new RequirementSendIdMapper());
+	public List <TrainingRequirementMaster> readSendRequirement(){
+		List <RequirementSendId> requirementSend = new ArrayList<RequirementSendId>();
+		List <TrainingRequirementMaster> requirement = new ArrayList<TrainingRequirementMaster>();
+		requirementSend = this.template.query("select * from RequirementSendId", new RequirementSendIdMapper());
+		for (RequirementSendId requirementSendId : requirementSend) {
+			requirement.add(requirementSendId.getRequirementID());
+		}
 		return requirement;
 	}
 	
+	public void selectSlot(List <TrainingProposals> proposals) {
+		for (TrainingProposals trainingProposals : proposals) {
+			Object[] params = new Object[] {1, trainingProposals.getProposalID()};
+			this.template.update("update TrainingProposals set SELECTED = ? where requirementID = ?",params);
+		}
+	}
+	
 //	public static void main(String[] args) {
-//		
+		
 //		RequerimentServices requirementServices = new RequerimentServices();
 //		
 //		TrainingRequirementMaster requirementMaster = requirementServices.ReadRequestRequeriment("TRM001");
@@ -108,13 +119,13 @@ public class RequerimentServices {
 //		
 //		requirementMaster.getTotalDurationDays()
 //		RequerimentServices requirementServices = new RequerimentServices();
-//		
-//		List <RequirementSendId> requirement = new ArrayList<RequirementSendId>();
-//		requirement = requirementServices.readSendRequirement();
-//		
-//		for (RequirementSendId requirementSendId : requirement) {
-//			System.out.println("ID:" +requirementSendId.getRequestID());
-//			System.out.println("RequirementID:" +requirementSendId.getRequirementID().getRequirementID());
+//		List <TrainingProposals> proposals = new TrainerService().getAllSlot();
+//		System.out.println("srivo");
+//		for (TrainingProposals trainingProposals : proposals) {
+//			System.out.println(trainingProposals.getProposalID());
 //		}
+//		requirementServices.selectSlot(proposals);
+//		requirement = requirementServices.readSendRequirement();
+		
 //	}
 }

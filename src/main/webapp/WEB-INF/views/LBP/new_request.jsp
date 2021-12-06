@@ -143,20 +143,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <ul class="list-unstyled">
-                        <li class="fw-bold mb-2"><a href="#" class="text-decoration-none text-muted">Community</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Home</a></li>
-                        <li><a href="#" class="text-decoration-none text-muted">Terms of service</a></li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <ul class="list-unstyled">
-                        <li class="fw-bold mb-2"><a href="#" class="text-decoration-none text-muted">Resources</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">About</a></li>
-                        <li><a href="#" class="text-decoration-none text-muted">Privacy policy</a></li>
-                    </ul>
-                </div>
+               
             </div>
         </div>
     </footer>

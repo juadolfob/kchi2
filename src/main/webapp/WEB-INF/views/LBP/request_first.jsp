@@ -61,10 +61,10 @@
         <div class=" header">
             <div class="row">
                 <div class="col-10">
+                <br>
                     <h2>Learning Bussiness Partner</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                        and scrambled it to make a type specimen book.</p>
+                    <br>
+                  
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@
                                 <label class="block">${requirement.getTrainingArea()}</label>
                             </li>
                             <li><b class="block">User training start date:</b>
-                                <label class="block">${requirement.getRequestedTrainingStartDate()}</label>
+                                <label class="block">${requirement.getTrainingArea()}</label>
                             </li>
                             <li><b class="block">Total candidates:</b>
                                 <label class="block">${requirement.getTotalCandidates()}</label>

@@ -2,7 +2,9 @@ package controllers;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,8 +15,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import mappers.TrainingParticipantMapper;
+import models.LDRoles;
+import models.TrainingParticipantData;
 import models.TrainingRequirementMaster;
 import services.MembersServices;
+import services.ParticipantServices;
 import services.RequerimentServices;
 
 @Controller
@@ -78,5 +84,37 @@ public class RequerimentServicesController {
 		model.addAttribute("requirements", new RequerimentServices().ReadAllRequestRequeriment());
 		return "LBP/landing-page";
     } 
+	
+	
+	
+	
+	
+	
+	
+	
+	@RequestMapping("/requeriment/{id}")  
+    public String trainingInf(Model model, @PathVariable String id) 
+    {  
+		model.addAttribute("requirementApprove", new RequerimentServices().GetApprove(id));
+		model.addAttribute("requirement", new RequerimentServices().ReadRequestRequeriment(id));
+		List<TrainingParticipantData> ParticipantsDatalist = new ParticipantServices().getParticipants(id);
+		model.addAttribute("participandatalist",ParticipantsDatalist);
+		
+		
+		
+		
+		return "LBP/training_information";
+    } 
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

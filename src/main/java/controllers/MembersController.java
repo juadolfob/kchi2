@@ -19,7 +19,7 @@ public class MembersController {
     @RequestMapping("/members")  
     public String main()
     {  
-		return "LBP/LDPRequest";
+		return "LBP/training_information";
     } 
 	@RequestMapping("/signIn")  
     public String signin()  

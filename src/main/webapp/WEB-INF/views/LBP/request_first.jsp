@@ -54,10 +54,10 @@
 						</div>
 						<div class="in-line trainer-data">
 							<div>
-								<label>Name:</label> <label>Juan Carlos Romos Mario</label>
+								<label>Name:</label> <label>${Slot.getMemberID().getMemberName()}</label>
 							</div>
 							<div>
-								<label>Time:</label> <label>10:00 am - 02:00 pm</label>
+								<label>Time:</label> <label>${Slot.getPropsedTime()}</label>
 							</div>
 						</div>
 					</div>

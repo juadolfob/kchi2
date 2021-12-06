@@ -1,39 +1,39 @@
-main{
-    display: flex;
-    justify-content: center;
+main {
+	display: flex;
+	justify-content: center;
 }
 
-.container-card-information{
-    width: 80%;
-}
-.Trainning-Card{
-    display: flex;
-    border: solid green 1px;
+.container-card-information {
+	width: 80%;
 }
 
-.card-body{
-    width: 50%;
+.Trainning-Card {
+	display: flex;
+	border: solid green 1px;
 }
 
-.Personel-Information-Container{
-    width: 50%;
-    padding: 1rem 1em;
+.card-body {
+	width: 50%;
 }
 
-
-.card{
-    width: 70%;
-    height: 6.5rem;
-    border-radius: 0.8rem;
-    border: solid #e0e0e0 1px;
-    margin-bottom: 0.8rem;
-    padding: 1rem 2.5rem;
+.Personel-Information-Container {
+	width: 50%;
+	padding: 1rem 1em;
 }
 
-.Employee-Email{
-    margin-left: 1.4rem;
+.card {
+	width: 70%;
+	height: 6.5rem;
+	border-radius: 0.8rem;
+	border: solid #e0e0e0 1px;
+	margin-bottom: 0.8rem;
+	padding: 1rem 2.5rem;
+}
+
+.Employee-Email {
+	margin-left: 1.4rem;
 }
 
 .dropdown-noicon::after {
-    display: none !important;
+	display: none !important;
 }

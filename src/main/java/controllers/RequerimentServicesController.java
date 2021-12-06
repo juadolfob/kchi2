@@ -2,6 +2,7 @@ package controllers;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,9 +15,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+
+import mappers.TrainingParticipantMapper;
+import models.LDRoles;
+import models.TrainingParticipantData;
+
 import models.TrainingProposals;
+
 import models.TrainingRequirementMaster;
 import services.MembersServices;
+import services.ParticipantServices;
 import services.RequerimentServices;
 import services.TrainerService;
 
@@ -87,6 +95,18 @@ public class RequerimentServicesController {
 		return "LBP/landing-page";
     } 
 	
+	@RequestMapping("/requeriment/{id}")  
+    public String trainingInf(Model model, @PathVariable String id) 
+    {  
+		model.addAttribute("requirementApprove", new RequerimentServices().GetApprove(id));
+		model.addAttribute("requirement", new RequerimentServices().ReadRequestRequeriment(id));
+		List<TrainingParticipantData> ParticipantsDatalist = new ParticipantServices().getParticipants(id);
+		model.addAttribute("participandatalist",ParticipantsDatalist);
+
+		return "LBP/training_information";
+    } 
+
+
 	@RequestMapping("/aproveRequirement")
 	public ModelAndView aproveRequirement(HttpServletRequest servlet) {
 		String requirementId = servlet.getParameter("requirementId");
@@ -103,4 +123,5 @@ public class RequerimentServicesController {
 		
 		return "Users/logindelivery";
 	}
+
 }

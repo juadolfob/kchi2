@@ -89,16 +89,20 @@ public class RequerimentServices {
 		return trainingExecution;
 	}
 	
-	public List <RequirementSendId> readSendRequirement(){
-		List <RequirementSendId> requirement = new ArrayList<RequirementSendId>();
-		requirement = this.template.query("select * from RequirementSendId", new RequirementSendIdMapper());
+	public List <TrainingRequirementMaster> readSendRequirement(){
+		List <RequirementSendId> requirementSend = new ArrayList<RequirementSendId>();
+		List <TrainingRequirementMaster> requirement = new ArrayList<TrainingRequirementMaster>();
+		requirementSend = this.template.query("select * from RequirementSendId", new RequirementSendIdMapper());
+		for (RequirementSendId requirementSendId : requirementSend) {
+			requirement.add(requirementSendId.getRequirementID());
+		}
 		return requirement;
 	}
 	
 //	public static void main(String[] args) {
 //		
 //		RequerimentServices requirementServices = new RequerimentServices();
-//		
+		
 //		TrainingRequirementMaster requirementMaster = requirementServices.ReadRequestRequeriment("TRM001");
 //		System.out.println("Id: "+ requirementMaster.getRequirementID());
 //		System.out.println("RequirementReceivedData: "+ requirementMaster.getRequirementReceivedDate());
@@ -108,13 +112,14 @@ public class RequerimentServices {
 //		
 //		requirementMaster.getTotalDurationDays()
 //		RequerimentServices requirementServices = new RequerimentServices();
-//		
-//		List <RequirementSendId> requirement = new ArrayList<RequirementSendId>();
+		
+//		List <TrainingRequirementMaster> requirement = new ArrayList<TrainingRequirementMaster>();
 //		requirement = requirementServices.readSendRequirement();
 //		
-//		for (RequirementSendId requirementSendId : requirement) {
-//			System.out.println("ID:" +requirementSendId.getRequestID());
-//			System.out.println("RequirementID:" +requirementSendId.getRequirementID().getRequirementID());
+//		for (TrainingRequirementMaster trainingRequirementMaster : requirement) {
+//			System.out.println(trainingRequirementMaster.getRequirementID());
+//			System.out.println(trainingRequirementMaster.getTrainingArea());
+//			System.out.println("--------------");
 //		}
 //	}
 }

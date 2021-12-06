@@ -97,4 +97,10 @@ public class RequerimentServicesController {
 		requirementService.aproveRequirement(requirement, proposal);
 		return new ModelAndView("redirect:/requeriment-all");
 	}
+	
+	@RequestMapping("/select-slot")
+	public String selectSlot(HttpServletRequest servlet) {
+		
+		return "Users/logindelivery";
+	}
 }

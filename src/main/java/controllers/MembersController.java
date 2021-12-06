@@ -22,15 +22,28 @@ import services.MembersServices;
 @Controller
 public class MembersController {
 	
-    @RequestMapping("/members")  
+	@RequestMapping("/")  
+    public String index()
+    {  
+		return "LBP/index";
+    } 
+	
+    @RequestMapping("/members")
     public String main()
     {  
 		return "LBP/LDPRequest";
     } 
-	@RequestMapping("/signIn")  
-    public String signin()  
+    
+    @RequestMapping("/signInLD")  
+    public String signinLD()  
     {  
-		return "Users/logindelivery";
+		return "Users/login_LD";
+    }
+    
+	@RequestMapping("/signInDelivery")  
+    public String signinDelivery()  
+    {  
+		return "Users/login_Delivery";
     }
      
 	@RequestMapping("/signUp")  

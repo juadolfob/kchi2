@@ -1,40 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<!DOCTYPE html>
-<html lang="en">
+<%@ include file="../includes/include.jsp"%>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-	crossorigin="anonymous">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-	crossorigin="anonymous"></script>
-<link rel="stylesheet" href="css/style.css">
+<%@ include file="../includes/meta.jsp"%>
 <link rel="stylesheet" href="css/register.css">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-	integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-	crossorigin="anonymous">
 <title>Sign Up</title>
 </head>
 <body>
-	<header>
-		<nav
-			class="navbar navbar-expand-lg navbar-dark bg-light opacity-90 ps-2 pe-5 py-0">
-			<div class="container-fluid px-5 py-0">
-				<a class="navbar-brand" href="#"> <img
-					src="res/atos-blue-logo.jfif" alt="atos white logo" height="35">
-				</a>
-			</div>
-		</nav>
-	</header>
+	<%@ include file="../includes/header_public.jsp"%>
 
 	<main class="container main">
 		<div class="row justify-content-around">
@@ -129,40 +100,6 @@
 			</div>
 		</form>
 	</main>
-
-	<footer class="bg-light w-100 mt-auto mx-0">
-		<div class="container">
-			<div class="row my-5">
-				<div class="col-5">
-					<div class="d-flex flex-column">
-						<div class="mb-5">
-							<img src="res/atos-blue-logo.jfif" alt="atos logo" width="100">
-						</div>
-						<div class="mt-5">2021 ATOS, All rights reserved</div>
-					</div>
-				</div>
-				<div class="col">
-					<ul class="list-unstyled">
-						<li class="fw-bold mb-2"><a href="#"
-							class="text-decoration-none text-muted">Community</a></li>
-						<li class="mb-2"><a href="#"
-							class="text-decoration-none text-muted">Home</a></li>
-						<li><a href="#" class="text-decoration-none text-muted">Terms
-								of service</a></li>
-					</ul>
-				</div>
-				<div class="col">
-					<ul class="list-unstyled">
-						<li class="fw-bold mb-2"><a href="#"
-							class="text-decoration-none text-muted">Resources</a></li>
-						<li class="mb-2"><a href="#"
-							class="text-decoration-none text-muted">About</a></li>
-						<li><a href="#" class="text-decoration-none text-muted">Privacy
-								policy</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<%@ include file="../includes/footer.jsp"%>
 </body>
 </html>

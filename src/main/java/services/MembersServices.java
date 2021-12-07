@@ -89,7 +89,13 @@ public class MembersServices {
 	}
 	
 	public String getNewId(String tableName, String keyFieldName) {
-		String lastId = this.template.queryForObject("select " + keyFieldName + " from " + tableName + " where rownum = 1 order by " + keyFieldName + " desc", String.class);
+		int count = this.template.queryForObject("select count(*) from " + tableName, Integer.class);
+		String lastId = "";
+		if (count == 0) {
+			lastId = "REG001";
+		} else {
+			lastId = this.template.queryForObject("select " + keyFieldName + " from " + tableName + " where rownum = 1 order by " + keyFieldName + " desc", String.class);
+		}
 		String newId = this.generateId(lastId);
 		return newId;
 	}

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import models.LDMemberData;
@@ -17,6 +18,7 @@ import models.LDRoles;
 import models.TrainingProposals;
 import models.TrainingRequirementMaster;
 import services.MembersServices;
+import services.RequerimentServices;
 
 
 @Controller
@@ -92,9 +94,10 @@ public class MembersController {
 		return "LBP/landing-page";
 	 }
 	
-	@RequestMapping("/newSlot")  
-	 public String  newSlot(HttpServletRequest servlet)
+	@RequestMapping("/newSlot/{requirementId}")  
+	 public String  newSlot(Model model, @PathVariable String requirementId)
 	   {  
+			model.addAttribute("requirement", new RequerimentServices().ReadRequestRequeriment(requirementId));
 			return "LBP/TrainerSlot";
 	   }
 	
@@ -106,9 +109,8 @@ public class MembersController {
 			TrainingProposals proposal = new TrainingProposals();
 			TrainingRequirementMaster reqID = new TrainingRequirementMaster();
 			LDMemberData member = new LDMemberData();
-			
 			String proposalID = newIDService.getNewId("TrainingProposals", "ProporsalID");
-			reqID.setRequirementID("TRM004");
+			reqID.setRequirementID(servlet.getParameter("requirementId"));
 			int selected = 0;
 			member.setMemberId("MEM04");
 			String proposedDate = servlet.getParameter("slot_date");

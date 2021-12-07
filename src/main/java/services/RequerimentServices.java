@@ -29,6 +29,8 @@ public class RequerimentServices {
 
 	
 	public TrainingRequirementMaster createRequestRequeriment(TrainingRequirementMaster trainingRequirementMaster ) {
+		trainingRequirementMaster.setRequirementID(new MembersServices().getNewId("TrainingRequirementMaster", "RequirementID"));
+		trainingRequirementMaster.setRequirementState(1);
 		Object[] params = new Object[]{
 			trainingRequirementMaster.getRequirementID(), 
 			trainingRequirementMaster.getRequirementReceivedDate(), 
@@ -39,10 +41,10 @@ public class RequerimentServices {
 			trainingRequirementMaster.getRequestedTrainingStartDate(), 
 			trainingRequirementMaster.getTotalCandidates(), 
 			trainingRequirementMaster.getTrainingTimeZone(), 
-			trainingRequirementMaster.getTotalDurationDays()
+			trainingRequirementMaster.getTotalDurationDays(),
+			trainingRequirementMaster.getRequirementState()
 		};
-		
-		this.template.update("insert into trainingRequirementMaster values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", params);
+		this.template.update("insert into trainingRequirementMaster values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", params);
 		TrainingRequirementMaster newRequirement = this.ReadRequestRequeriment(trainingRequirementMaster.getRequirementID());
 		return newRequirement;
 	}
@@ -63,11 +65,10 @@ public class RequerimentServices {
 	}
 	
 	public void aproveRequirement(TrainingRequirementMaster requirement, TrainingProposals proposal) {
-		String id = new MembersServices().getNewId("TrainingExecutionMaster", "ExecutionID");
+		String id = new MembersServices().getNewId("TrainingExecutionMaster", "RequirementID");
 		Object[] params = new Object[] {id, requirement.getRequirementID(), proposal.getProposedDate(), proposal.getPropsedTime(), proposal.getMemberID().getMemberId(), proposal.getProposedDuration(), "Confirmed", requirement.getTotalCandidates()};
 		this.template.update("insert into trainingExecutionMaster values (?, ?, ?, ?, ?, ?, ?, ?)", params);
-		//state 3?
-		this.changeRequirementState(requirement.getRequirementID(), 3);
+		this.changeRequirementState(requirement.getRequirementID(), 4);
 	}
 	
 	public void changeRequirementState(String requirementId, int state) {
@@ -81,7 +82,7 @@ public class RequerimentServices {
 		Object[] params = new Object[] { requirementID };
 		
 		trainingExecution = this.template.queryForObject(
-				"select * from TrainigExecutionMaster where RequierementID = ?", 
+				"select * from TrainingExecutionMaster where ExecutionID = ?", 
 				params, 
 				new TrainingExecutionMasterMapper()
 		);
@@ -90,16 +91,17 @@ public class RequerimentServices {
 	}
 	
 	public void sendRequest(String requirementID) {
-		Object[] params = new Object[] { requirementID };
+		Object[] params = new Object[] { new MembersServices().getNewId("RequirementSendId", "requestId"), requirementID };
 		this.template.update("insert into RequirementSendId values (?, ?)", params);
+		this.changeRequirementState(requirementID, 2);
 	}
 	
 	public boolean checkEntryExistance(String tableName, String colName, String value) {
-	    String sql = "SELECT count(*) FROM ? WHERE ? = ?";
+	    String sql = "SELECT count(*) FROM " + tableName + " WHERE " + colName + " = ?";
 
 	    int count = this.template.queryForObject(
 	    		sql, 
-	    		new Object[] {tableName, colName, value}, 
+	    		new Object[] {value}, 
 	    		Integer.class
 	    );
 
@@ -116,11 +118,12 @@ public class RequerimentServices {
 		return requirement;
 	}
 	
-	public void selectSlot(List <TrainingProposals> proposals) { 
+	public void selectSlot(List <TrainingProposals> proposals, String requirementId) { 
 		for (TrainingProposals trainingProposals : proposals) {
 			Object[] params = new Object[] {1, trainingProposals.getProposalID()};
 			this.template.update("update TrainingProposals set SELECTED = ? where proporsalID = ?",params);
 		}
+		this.changeRequirementState(requirementId, 3);
 	}
 	
 //	public static void main(String[] args) {

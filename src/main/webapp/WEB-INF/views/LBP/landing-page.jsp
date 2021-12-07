@@ -5,16 +5,16 @@
 <body>
 <%@ include file="../includes/header_private.jsp"%>
 	<div class="container" style="margin-top: 3rem;">
-
-		<div class="row" style="margin-top: 1.5rem;">
-			<div class="col-12">
-				<a type="button" href="#" class="btn"><h5>
-						<i class="fas fa-plus"></i> New Request
-					</h5></a>
+		<c:if test="${user == 'LBP'}">
+			<div class="row" style="margin-top: 1.5rem;">
+				<div class="col-12">
+					<a type="button" href="newRequest" class="btn"><h5>
+							<i class="fas fa-plus"></i> New Request
+						</h5></a>
+				</div>
 			</div>
-		</div>
+		</c:if>
 		<div class="row" style="margin-top: 2rem;">
-
 			<c:forEach var="requirement" items="${requirements}">
 				<div class="col-4">
 					<div class="card border-primary mb-3" style="border-radius: 15px;">
@@ -31,9 +31,35 @@
 									${requirement.getRequestedTrainingStartDate()}</li>
 							</ul>
 
-							<a href="requeriment/${requirement.getRequirementID()}"
-								class="btn btn-outline-primary" style="float: right;">View <i
-								class="far fa-eye"></i></a>
+							<c:if test="${user == 'LBP'}">
+								<c:if test="${requirement.getRequirementState() == 1}">
+									<a href="sendRequest/${requirement.getRequirementID()}"
+										class="btn btn-outline-primary" style="float: right;">View <i
+										class="far fa-eye"></i></a>
+								</c:if>
+								<c:if test="${requirement.getRequirementState() == 2}">
+									<a href="firstRequest/${requirement.getRequirementID()}"
+										class="btn btn-outline-primary" style="float: right;">View <i
+										class="far fa-eye"></i></a>
+								</c:if>
+								<c:if test="${requirement.getRequirementState() == 3}">
+									<a href="firstRequestSendSecond/${requirement.getRequirementID()}"
+										class="btn btn-outline-primary" style="float: right;">View <i
+										class="far fa-eye"></i></a>
+								</c:if>
+								<c:if test="${requirement.getRequirementState() == 4}">
+									<a href="requeriment/${requirement.getRequirementID()}"
+										class="btn btn-outline-primary" style="float: right;">View <i
+										class="far fa-eye"></i></a>
+								</c:if>
+							</c:if>
+							<c:if test="${user == 'TRAINER'}">
+								<c:if test="${requirement.getRequirementState() == 2}">
+									<a href="newSlot/${requirement.getRequirementID()}"
+										class="btn btn-outline-primary" style="float: right;">View <i
+										class="far fa-eye"></i></a>
+								</c:if>
+							</c:if>
 						</div>
 					</div>
 				</div>

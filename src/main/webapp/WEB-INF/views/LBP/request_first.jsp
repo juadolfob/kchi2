@@ -50,76 +50,35 @@
             </div>
             <div class="col">
                 <h4>Choose trainer slots</h4>
-                <div id="trainer-list">
-                    <div class="check-block">
-                        <div class="in-line check-d">
-                            <input type="checkbox" class="form-check-input"/>
-                        </div>
-                        <div class="in-line trainer-data">
-                            <div>
-                                <label>Name:</label>
-                                <label>${Slot.getMemberID().getMemberName()}</label>
-                            </div>
-                            <div>
-                                <label>Time:</label>
-                                <label>${Slot.getPropsedTime()}</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="check-block">
-                        <div class="in-line check-d">
-                            <input type="checkbox" class="form-check-input"/>
-                        </div>
-                        <div class="in-line trainer-data">
-                            <div>
-                                <label>Name:</label>
-                                <label>Perez Arriaga</label>
-                            </div>
-                            <div>
-                                <label>Time:</label>
-                                <label>10:00 am - 02:00 pm</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="check-block">
-                        <div class="in-line check-d">
-                            <input type="checkbox" class="form-check-input"/>
-                        </div>
-                        <div class="in-line trainer-data">
-                            <div>
-                                <label>Name:</label>
-                                <label>Mariana Garcia</label>
-                            </div>
-                            <div>
-                                <label>Time:</label>
-                                <label>10:00 am - 02:00 pm</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="check-block">
-                        <div class="in-line check-d">
-                            <input type="checkbox" class="form-check-input"/>
-                        </div>
-                        <div class="in-line trainer-data">
-                            <div>
-                                <label>Name:</label>
-                                <label>Daniel Lopez</label>
-                            </div>
-                            <div>
-                                <label>Time:</label>
-                                <label>10:00 am - 02:00 pm</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group comment-block">
-                    <label for="vertical">Comment</label>
-                    <textarea required placeholder="Enter comment" id="vertical" class="form-control b-r" rows="4"></textarea>
-                </div>
-                <button class="btn btn-primary btn-labeled b-r">
-                    Submit
-                    <span class="btn-label"><i class="fas fa-arrow-right"></i></span>
-                </button>
+                <form>
+	                <div id="trainer-list">
+	                	<c:forEach items="${sots}" var="slot">
+                         	<div class="check-block">
+		                        <div class="in-line check-d">
+		                            <input type="checkbox" class="form-check-input" name="slot" value="${slot.getProposalID()}"/>
+		                        </div>
+		                        <div class="in-line trainer-data">
+		                            <div>
+		                                <label>Name:</label>
+		                                <label>${slot.getMemberID().getMemberName()}</label>
+		                            </div>
+		                            <div>
+		                                <label>Time:</label>
+		                                <label>${slot.getPropsedTime()}</label>
+		                            </div>
+		                        </div>
+		                    </div>
+	                    </c:forEach>
+	                </div>
+	                <div class="form-group comment-block">
+	                    <label for="vertical">Comment</label>
+	                    <textarea required placeholder="Enter comment" id="vertical" class="form-control b-r" rows="4"></textarea>
+	                </div>
+	                <button class="btn btn-primary btn-labeled b-r" formaction="select-slot/${requirement.getRequirementID()}">
+	                    Submit
+	                    <span class="btn-label"><i class="fas fa-arrow-right"></i></span>
+	                </button>
+                </form>
             </div>
         </div>
     </main>

@@ -3,6 +3,8 @@ package services;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import mappers.TrainingParticipantMapper;
@@ -12,7 +14,11 @@ public class ParticipantServices {
 	
 	JdbcTemplate template;
 	
-	@SuppressWarnings("unchecked")
+	public ParticipantServices() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+		this.template = (JdbcTemplate) context.getBean("mytemp");
+	}
+	
 	public List<TrainingParticipantData> getParticipants(String RequerimentID){
 		List<TrainingParticipantData> ParticipantsData = new ArrayList<TrainingParticipantData>();
 		

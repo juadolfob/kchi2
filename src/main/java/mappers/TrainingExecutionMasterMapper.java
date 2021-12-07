@@ -14,7 +14,7 @@ public class TrainingExecutionMasterMapper implements RowMapper<TrainingExecutio
 		TrainingExecutionMaster trainingExecution = new TrainingExecutionMaster();
 		
 		trainingExecution.setExecutionID(result.getString("ExecutionID"));
-		trainingExecution.setRequirementID(result.getString("RequierementID"));
+		trainingExecution.setRequirementID(result.getString("RequirementID"));
 		trainingExecution.setConfirmedDate(result.getDate("ConfirmedDate"));
 		trainingExecution.setConfirmedTime(result.getString("ConfirmedTime"));
 		trainingExecution.setTrainerID(result.getString("Trainer"));

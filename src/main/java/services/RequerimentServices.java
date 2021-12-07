@@ -65,7 +65,7 @@ public class RequerimentServices {
 	}
 	
 	public void aproveRequirement(TrainingRequirementMaster requirement, TrainingProposals proposal) {
-		String id = new MembersServices().getNewId("TrainingExecutionMaster", "RequirementID");
+		String id = new MembersServices().getNewId("TrainingExecutionMaster", "ExecutionID");
 		Object[] params = new Object[] {id, requirement.getRequirementID(), proposal.getProposedDate(), proposal.getPropsedTime(), proposal.getMemberID().getMemberId(), proposal.getProposedDuration(), "Confirmed", requirement.getTotalCandidates()};
 		this.template.update("insert into trainingExecutionMaster values (?, ?, ?, ?, ?, ?, ?, ?)", params);
 		this.changeRequirementState(requirement.getRequirementID(), 4);
@@ -82,7 +82,7 @@ public class RequerimentServices {
 		Object[] params = new Object[] { requirementID };
 		
 		trainingExecution = this.template.queryForObject(
-				"select * from TrainingExecutionMaster where ExecutionID = ?", 
+				"select * from TrainingExecutionMaster where RequirementID = ?", 
 				params, 
 				new TrainingExecutionMasterMapper()
 		);

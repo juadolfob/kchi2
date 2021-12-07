@@ -89,7 +89,24 @@ public class RequerimentServices {
 		return trainingExecution;
 	}
 	
-	public List <TrainingRequirementMaster> readSendRequirement(){
+	public void sendRequest(String requirementID) {
+		Object[] params = new Object[] { requirementID };
+		this.template.update("insert into RequirementSendId values (?, ?)", params);
+	}
+	
+	public boolean checkEntryExistance(String tableName, String colName, String value) {
+	    String sql = "SELECT count(*) FROM ? WHERE ? = ?";
+
+	    int count = this.template.queryForObject(
+	    		sql, 
+	    		new Object[] {tableName, colName, value}, 
+	    		Integer.class
+	    );
+
+	    return count > 0;
+	}
+	
+	public List <TrainingRequirementMaster> readSendRequirement() {
 		List <RequirementSendId> requirementSend = new ArrayList<RequirementSendId>();
 		List <TrainingRequirementMaster> requirement = new ArrayList<TrainingRequirementMaster>();
 		requirementSend = this.template.query("select * from RequirementSendId", new RequirementSendIdMapper());

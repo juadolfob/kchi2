@@ -64,7 +64,7 @@ public class RequerimentServicesController {
 		return new ModelAndView("redirect:/requeriment-all");
     }
 	
-	@RequestMapping("/firstRequest")  
+	@RequestMapping("/firstRequest")
     public String firstRequest() 
     {  
 		return "LBP/request_first";
@@ -86,6 +86,26 @@ public class RequerimentServicesController {
     {  
 		model.addAttribute("requirement", new RequerimentServices().ReadRequestRequeriment(id));
 		return "LBP/request_first";
+    } 
+	
+	@RequestMapping("/sendRequest/{id}")
+    public String sendRequest(Model model, @PathVariable String id) 
+    {  
+		RequerimentServices services = new RequerimentServices();
+		
+		model.addAttribute("requestSent", services.checkEntryExistance("RequirementSendId", "RequestID", id));
+		model.addAttribute("requirement", services.ReadRequestRequeriment(id));
+		return "LBP/SendRequest";
+    }
+	
+	@RequestMapping("/sendRequestService/{id}")
+    public String sendRequestService(Model model, @PathVariable String id) 
+    {  
+		RequerimentServices services = new RequerimentServices();
+		
+		if(!services.checkEntryExistance("RequirementSendId", "RequestID", id))
+			services.sendRequest(id);
+		return "redirect:/SendRequest/{"+id+"}";
     } 
 	
 	@RequestMapping("/requeriment-all")

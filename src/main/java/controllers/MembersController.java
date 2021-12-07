@@ -24,9 +24,12 @@ import services.RequerimentServices;
 @Controller
 public class MembersController {
 	
-	@RequestMapping("/")  
+	
+	@RequestMapping({"/","/main"}) 
     public String index()
     {  
+		
+		
 		return "LBP/index";
     } 
 	

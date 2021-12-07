@@ -160,5 +160,24 @@ public class RequerimentServicesController {
 		requirementServices.selectSlot(proposals, requirementId);
 		return "redirect:/requeriment-all";
 	}
+	
+	
+	
+	@RequestMapping("/ti")  
+    public String trainingInf() 
+    {  
+
+		return "LBP/request_second";
+    } 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

@@ -125,14 +125,4 @@ public class MembersServices {
 //		}
 //		
 //	}
-
-
-
-
-	public String getNewId(String string, String string2) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
 }

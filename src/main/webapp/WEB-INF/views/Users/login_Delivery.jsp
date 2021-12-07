@@ -2,6 +2,7 @@
 <head>
 <%@ include file="../includes/meta.jsp"%>
 <link rel="stylesheet" href="css/login.css" />
+<link rel="stylesheet" href="css/style.css">
 <title>Login Page</title>
 </head>
 

@@ -52,7 +52,7 @@
             <div class="form-group">
               <label for="time_zone">User training time zone</label>
               <div class="icon-input">
-                <input type="text" required placeholder="Enter traiing time zone" id="time_zone" class="form-control rc p-l" name="timeZone"/>
+                <input type="text" required placeholder="Enter training time zone" id="time_zone" class="form-control rc p-l" name="timeZone"/>
                 <i class="far fa-building"></i>
               </div>
             </div>

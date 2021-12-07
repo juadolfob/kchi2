@@ -63,10 +63,18 @@ public class RequerimentServicesController {
 		new RequerimentServices().createRequestRequeriment(requirement);
 		return new ModelAndView("redirect:/requeriment-all");
     }
-	
 	@RequestMapping("/firstRequest")
-    public String firstRequest() 
+    public String firstRequest(ModelMap model , @PathVariable String RequerimentID)
     {  
+		List<TrainingProposals> Lista = new TrainerService().GetSlot(RequerimentID);
+	
+		model.addAttribute("Slot", Lista);
+	//System.out.println(Lista.toString());
+	
+		for(TrainingProposals T: Lista) {
+		System.out.println(T.getProposalID()+ " " +T.getRequirementID()+ " " +T.getMemberID().getMemberName()+ " " +T.getProposedDate());
+	}
+
 		return "LBP/request_first";
     } 
 

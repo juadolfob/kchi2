@@ -113,13 +113,21 @@ public class MembersController {
 			reqID.setRequirementID(servlet.getParameter("requirementId"));
 			int selected = 0;
 			member.setMemberId("MEM04");
-			String proposedDate = servlet.getParameter("slot_date");
+			
 			String PropsedTime = servlet.getParameter("slot_time");
 			int ProposedDuration = Integer.parseInt(servlet.getParameter("slot_duration"));
 			
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MMM-yy");
-			System.out.println(sdf2.format(sdf.parse(proposedDate)));
+//			String proposedDate = servlet.getParameter("slot_date");
+//			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//			SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MMM-yy");
+//			System.out.println(sdf2.format(sdf.parse(proposedDate))); 
+			
+			Date proposedDate; 
+			try {
+				proposedDate = new SimpleDateFormat("dd/MM/yyyy").parse(servlet.getParameter("slot_date"));
+			} catch (ParseException e) {
+				proposedDate = new Date();
+			}
 			
 			
 			TrainingProposals newproposal = new TrainingProposals();
@@ -127,7 +135,7 @@ public class MembersController {
 			newproposal.setRequirementID(reqID);
 			newproposal.setSelected(selected);
 			newproposal.setMemberID(member);
-			newproposal.setProposedDate(sdf2.format(sdf.parse(proposedDate)));
+			newproposal.setProposedDate(proposedDate);
 			newproposal.setPropsedTime(PropsedTime);
 			newproposal.setProposedDuration(ProposedDuration);
 			

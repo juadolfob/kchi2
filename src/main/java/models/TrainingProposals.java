@@ -7,7 +7,7 @@ public class TrainingProposals {
 	private TrainingRequirementMaster requirementID;
 	private int selected;
 	private LDMemberData memberID;
-	private String proposedDate;
+	private Date proposedDate;
 	private String PropsedTime;
 	private int ProposedDuration;
 	
@@ -35,10 +35,10 @@ public class TrainingProposals {
 	public void setMemberID(LDMemberData memberID) {
 		this.memberID = memberID;
 	}
-	public String getProposedDate() {
+	public Date getProposedDate() {
 		return proposedDate;
 	}
-	public void setProposedDate(String proposedDate) {
+	public void setProposedDate(Date proposedDate) {
 		this.proposedDate = proposedDate;
 	}
 	public String getPropsedTime() {

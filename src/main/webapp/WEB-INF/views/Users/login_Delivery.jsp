@@ -63,8 +63,8 @@
 							</div>
 							<br />
 							<div class="col text-center">
-								<button class="btn btn-primary btn-labeled redondeo">
-									Sign up</button>
+								<a type="button" href="requirement-trainer" class="btn btn-primary btn-labeled redondeo">
+									Sign up</a>
 							</div>
 						</div>
 					</div>
@@ -76,8 +76,7 @@
 						</figure>
 					</div>
 				</div>
-		</div>
-		</form>
+			</form>
 		</div>
 	</main>
 	<%@ include file="../includes/footer.jsp"%>

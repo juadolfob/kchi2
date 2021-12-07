@@ -69,8 +69,8 @@
 							</div>
 							<br />
 							<div class="col text-center">
-								<button class="btn btn-primary btn-labeled redondeo">
-									Sign In</button>
+								<a type="button" href="requeriment-all" class="btn btn-primary btn-labeled redondeo">
+									Sign In</a>
 							</div>
 						</div>
 					</div>

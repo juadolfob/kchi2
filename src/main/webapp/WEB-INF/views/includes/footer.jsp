@@ -5,7 +5,7 @@
 			<div class="col-5">
 				<div class="d-flex flex-column">
 					<div class="mb-5">
-						<img src="res/logo_transparent" alt="atos logo" width="100">
+						<img src="res/logo_transparent.png" alt="atos logo" width="100">
 					</div>
 					<div class="mt-5">2021 ATOS, All rights reserved</div>
 				</div>

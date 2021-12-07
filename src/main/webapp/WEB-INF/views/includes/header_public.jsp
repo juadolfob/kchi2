@@ -4,7 +4,7 @@
 		class="navbar navbar-expand-lg navbar-light bg-light opacity-90 ps-2 pe-5 py-0">
 		<div class="container-fluid px-5 py-0">
 			<a class="navbar-brand" href="#"> <img
-				src="res/atos-blue-logo.jfif" class="img-logo" alt="atos white logo">
+				src="res/logo_transparent" class="img-logo" alt="atos white logo">
 			</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

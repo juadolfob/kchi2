@@ -104,11 +104,12 @@ public class MembersController {
 	@RequestMapping("/registerSlot")  
 	 public String  registerSlot(HttpServletRequest servlet) throws ParseException
 	   {  
+			MembersServices newIDService = new MembersServices();
+			
 			TrainingProposals proposal = new TrainingProposals();
 			TrainingRequirementMaster reqID = new TrainingRequirementMaster();
 			LDMemberData member = new LDMemberData();
-			
-			String proposalID = new MembersServices().getNewId("TrainingProposals", "proporsalId");
+			String proposalID = newIDService.getNewId("TrainingProposals", "ProporsalID");
 			reqID.setRequirementID(servlet.getParameter("requirementId"));
 			int selected = 0;
 			member.setMemberId("MEM04");

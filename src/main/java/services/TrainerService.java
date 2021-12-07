@@ -29,7 +29,7 @@ public class TrainerService {
 	public List<TrainingProposals> GetSlot(String ExecutionID){
 		List<TrainingProposals> trainingProp = new ArrayList<TrainingProposals>();
 		Object[] params = new Object[]{ExecutionID};
-		trainingProp = this.template.query("select * from TrainingProposals where ExecutionID = ?", params, new TrainingProposalsMapper());
+		trainingProp = this.template.query("select * from TrainingProposals where RequirementID = ?", params, new TrainingProposalsMapper());
 		return trainingProp;
 	}
 

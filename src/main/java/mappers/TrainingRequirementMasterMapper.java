@@ -23,6 +23,7 @@ public class TrainingRequirementMasterMapper implements RowMapper<TrainingRequir
 		training.setTotalCandidates(result.getInt("totalCandidates"));
 		training.setTrainingTimeZone(result.getString("trainingTimeZone"));
 		training.setTotalDurationDays(result.getInt("totalDurationDays"));
+		training.setRequirementState(result.getInt("requirementState"));
 		training.setRequirementUserVertical(new MembersServices().getVerticalMasterById(result.getString("RequirementUserVertical")));
 		return training;
 	}

@@ -13,6 +13,7 @@ public class TrainingRequirementMaster {
 	private int totalCandidates;
 	private String trainingTimeZone;
 	private int totalDurationDays;
+	private int requirementState;
 	
 	public String getRequirementID() {
 		return requirementID;
@@ -73,5 +74,11 @@ public class TrainingRequirementMaster {
 	}
 	public void setTotalDurationDays(int totalDurationDays) {
 		this.totalDurationDays = totalDurationDays;
+	}
+	public int getRequirementState() {
+		return this.requirementState;
+	}
+	public void setRequirementState(int requirementState) {
+		this.requirementState = requirementState;
 	}
 }

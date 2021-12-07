@@ -46,9 +46,11 @@
 				<div class="col">
 					<h4>Forward to trainers</h4>
 					<c:if test="${!requestSent}">
-						<a href="sendRequirementService/${requirement.getRequirementID()}" class="btn btn-primary btn-labeled b-r"> Send information <span
-							class="btn-label"><i class="fas fa-arrow-right"></i></span>
-						</a>
+						<form action="sendRequestService/${requirement.getRequirementID()}" method="post">
+							<button class="btn btn-primary btn-labeled b-r"> Send information <span
+								class="btn-label"><i class="fas fa-arrow-right"></i></span>
+							</button>
+						</form>
 					</c:if>
 					<c:if test="${requestSent}">
 						<a href="" class="btn btn-success btn-labeled b-r disabled"> Send information <span

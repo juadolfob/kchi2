@@ -54,7 +54,6 @@ public class RequerimentServicesController {
 		requirement.setRequirementUser("Get from session");
 		MembersServices members = new MembersServices();
 		requirement.setRequirementUserVertical(members.getVerticalMasterById(servlet.getParameter("verticalMaster")));
-		requirement.setRequirementID(members.getNewId("TrainingRequirementMaster", "RequirementID"));
 		requirement.setTotalCandidates(Integer.parseInt(servlet.getParameter("candidates")));
 		requirement.setTotalDurationDays(Integer.parseInt(servlet.getParameter("days")));
 		requirement.setTrainingArea(servlet.getParameter("trainingArea"));
@@ -63,38 +62,31 @@ public class RequerimentServicesController {
 		new RequerimentServices().createRequestRequeriment(requirement);
 		return new ModelAndView("redirect:/requeriment-all");
     }
-	@RequestMapping("/firstRequest")
+	@RequestMapping("/firstRequest/{RequerimentID}")
     public String firstRequest(ModelMap model , @PathVariable String RequerimentID)
     {  
+		model.addAttribute("requirement", new RequerimentServices().ReadRequestRequeriment(RequerimentID));
 		List<TrainingProposals> Lista = new TrainerService().GetSlot(RequerimentID);
 	
-		model.addAttribute("Slot", Lista);
+		model.addAttribute("slots", Lista);
 	//System.out.println(Lista.toString());
 	
 		for(TrainingProposals T: Lista) {
-		System.out.println(T.getProposalID()+ " " +T.getRequirementID()+ " " +T.getMemberID().getMemberName()+ " " +T.getProposedDate());
-	}
+			System.out.println(T.getProposalID()+ " " +T.getRequirementID()+ " " +T.getMemberID().getMemberName()+ " " +T.getProposedDate());
+		}
 
 		return "LBP/request_first";
     } 
 
-	@RequestMapping("/firstRequestSendSecond")
-	 public String firstRequestSendSecond(HttpServletRequest servlet, ModelMap model)
+	@RequestMapping("/firstRequestSendSecond/{id}")
+	 public String firstRequestSendSecond(ModelMap model, @PathVariable String requirementId)
 	 {
-		String requirementId = servlet.getParameter("requirementId");
 		TrainingRequirementMaster requirement = new RequerimentServices().ReadRequestRequeriment(requirementId);
 		List<TrainingProposals> proposals = new TrainerService().getSelectedProposals(requirementId);
 		model.addAttribute("requirement", requirement);
 		model.addAttribute("proposals", proposals);
 		return "LBP/request_second";
 	 }
-	
-	@RequestMapping("/requeriment/{id}")  
-    public String firstRequest(Model model, @PathVariable String id) 
-    {  
-		model.addAttribute("requirement", new RequerimentServices().ReadRequestRequeriment(id));
-		return "LBP/request_first";
-    } 
 	
 	@RequestMapping("/sendRequest/{id}")
     public String sendRequest(Model model, @PathVariable String id) 
@@ -113,15 +105,24 @@ public class RequerimentServicesController {
 		
 		if(!services.checkEntryExistance("RequirementSendId", "RequestID", id))
 			services.sendRequest(id);
-		return "redirect:/SendRequest/{"+id+"}";
+		//return "redirect:/SendRequest/{"+id+"}";
+		return "redirect:/requeriment-all";
     } 
 	
 	@RequestMapping("/requeriment-all")
-    public String secondRequest(Model model)  
+    public String landingLD(Model model)  
     {  
 		model.addAttribute("requirements", new RequerimentServices().ReadAllRequestRequeriment());
+		model.addAttribute("user", "LBP");
 		return "LBP/landing-page";
-    } 
+    }
+	
+	@RequestMapping("/requirement-trainer")
+	public String landingTrainer (Model model) {
+		model.addAttribute("requirements", new RequerimentServices().readSendRequirement());
+		model.addAttribute("user", "TRAINER");
+		return "LBP/landing-page";
+	}
 	
 	@RequestMapping("/requeriment/{id}")  
     public String trainingInf(Model model, @PathVariable String id) 
@@ -146,8 +147,8 @@ public class RequerimentServicesController {
 		return new ModelAndView("redirect:/requeriment-all");
 	}
 	
-	@RequestMapping("/select-slot")
-	public String selectSlot(HttpServletRequest servlet) {
+	@RequestMapping("/select-slot/{requirementId}")
+	public String selectSlot(HttpServletRequest servlet, @PathVariable String requirementId) {
 		String [] proposalsRequest = servlet.getParameterValues("proposal");
 		List <TrainingProposals> proposals = new ArrayList<TrainingProposals>();
 		RequerimentServices requirementServices = new RequerimentServices();
@@ -156,7 +157,7 @@ public class RequerimentServicesController {
 			proposals.add(new TrainerService().getSlot(proposal));
 		}
 		
-		requirementServices.selectSlot(proposals);
+		requirementServices.selectSlot(proposals, requirementId);
 		return "redirect:/requeriment-all";
 	}
 

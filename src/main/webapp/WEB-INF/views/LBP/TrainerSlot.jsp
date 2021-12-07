@@ -26,20 +26,19 @@
 							<i class="fas fa-users"></i> Java full-stack Training
 						</h5>
 						<ul class="info-list">
-							<li><b class="block">Id:</b> <label class="block">26105671</label>
+							<li><b class="block">Id:</b> <label class="block">${requirement.getRequirementID()}</label>
 							</li>
-							<li><b class="block">User vertical:</b> <label class="block">Mahesh
-									Rajput</label></li>
-							<li><b class="block">User training area:</b> <label
-								class="block">Java Full-Stack</label></li>
+							<li><b class="block">User vertical:</b> <label class="block">${requirement.getRequirementUser()}</label></li>
+							<li><b class="block">User training area:</b><label
+								class="block">${requirement.getTrainingArea()}</label></li>
 							<li><b class="block">User training start date:</b> <label
-								class="block">22 / 11 / 2021</label></li>
+								class="block">${requirement.getTrainingArea()}</label></li>
 							<li><b class="block">Total candidates:</b> <label
-								class="block">30</label></li>
+								class="block">${requirement.getTotalCandidates()}</label></li>
 							<li><b class="block">User training time zone:</b> <label
-								class="block">(GMT + 5:30)</label></li>
+								class="block">${requirement.getTrainingTimeZone()}</label></li>
 							<li><b class="block">Total duration dates:</b> <label
-								class="block">60 days</label></li>
+								class="block">${requirement.getTotalDurationDays()}</label></li>
 						</ul>
 					</div>
 				</div>
@@ -48,6 +47,7 @@
 				<h4>Create New Slot</h4>
 
 				<form action="registerSlot">
+					<input type="hidden" value="${requirement.getRequirementID()}" name="requirementId"/>
 					<div class="form-group">
 						<label for="slot_date" class="form-label">Proposed Date</label>
 						<div class="icon-input">

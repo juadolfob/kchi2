@@ -101,10 +101,10 @@
                 <h4>Choose trainer slots</h4>
                 <form>
 	                <div id="trainer-list">
-	                	<c:forEach items="${sots}" var="slot">
+	                	<c:forEach items="${slots}" var="slot">
                          	<div class="check-block">
 		                        <div class="in-line check-d">
-		                            <input type="checkbox" class="form-check-input" name="slot" value="${slot.getProposalID()}"/>
+		                            <input type="checkbox" class="form-check-input" name="slots" value="${slot.getProposalID()}"/>
 		                        </div>
 		                        <div class="in-line trainer-data">
 		                            <div>

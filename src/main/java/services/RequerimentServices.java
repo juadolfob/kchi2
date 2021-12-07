@@ -82,7 +82,7 @@ public class RequerimentServices {
 		Object[] params = new Object[] { requirementID };
 		
 		trainingExecution = this.template.queryForObject(
-				"select * from TrainingExecutionMaster where RequirementID = ?", 
+				"select * from trainingExecutionmaster where requirementID = ?", 
 				params, 
 				new TrainingExecutionMasterMapper()
 		);

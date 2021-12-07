@@ -81,7 +81,7 @@
                                 <label class="block">${requirement.getRequirementID()}</label>
                             </li>
                             <li><b class="block">User vertical:</b>
-                                <label class="block">${requirement.getRequirementUser().getVerticalName()}</label>
+                                <label class="block">${requirement.getRequirementUser()}</label>
                             </li>
                             <li><b class="block">User training area:</b>
                                 <label class="block">${requirement.getTrainingArea()}</label>
@@ -104,7 +104,7 @@
             </div>
             <div class="col">
                 <h4>Choose trainer slots</h4>
-                <form>
+                <form action="aproveRequirement">
                 	<input type="hidden" value="${requirement.getRequirementID()}" name="requirementId"/>
                 	<div id="trainer-list">
 	                	<c:forEach var="proposal" items="${proposals}">
@@ -113,7 +113,7 @@
 		                        <label class="form-check-label" for="flexRadioDefault1">
 		                            <div>
 		                                <label>Name:</label>
-		                                <label> ${proposal.getMember().getMemberName()}</label>
+		                                <label> ${proposal.getMemberID().getMemberName()}</label>
 		                            </div>
 		                            <div>
 		                                <label>Time:</label>

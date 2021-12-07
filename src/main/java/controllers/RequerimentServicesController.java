@@ -78,7 +78,7 @@ public class RequerimentServicesController {
 		return "LBP/request_first";
     } 
 
-	@RequestMapping("/firstRequestSendSecond/{id}")
+	@RequestMapping("/firstRequestSendSecond/{requirementId}")
 	 public String firstRequestSendSecond(ModelMap model, @PathVariable String requirementId)
 	 {
 		TrainingRequirementMaster requirement = new RequerimentServices().ReadRequestRequeriment(requirementId);
@@ -149,7 +149,7 @@ public class RequerimentServicesController {
 	
 	@RequestMapping("/select-slot/{requirementId}")
 	public String selectSlot(HttpServletRequest servlet, @PathVariable String requirementId) {
-		String [] proposalsRequest = servlet.getParameterValues("proposal");
+		String [] proposalsRequest = servlet.getParameterValues("slots");
 		List <TrainingProposals> proposals = new ArrayList<TrainingProposals>();
 		RequerimentServices requirementServices = new RequerimentServices();
 		
@@ -161,23 +161,4 @@ public class RequerimentServicesController {
 		return "redirect:/requeriment-all";
 	}
 	
-	
-	
-	@RequestMapping("/ti")  
-    public String trainingInf() 
-    {  
-
-		return "LBP/request_second";
-    } 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }

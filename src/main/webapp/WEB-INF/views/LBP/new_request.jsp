@@ -10,6 +10,12 @@
     <main class="container main">
       <div class="row justify-content-around">
         <div class="col-7 form-h">
+        
+        <br>
+         <a type="button" href="../requeriment-all" class="btn"><h5>
+							<i class="fas fa-long-arrow-alt-left"></i> Back
+						</h5></a>
+        <br>
           <img src="res/user-solid.svg" width="30" height="30" class="opacity-50 form-h-e" alt="user icon"/>
           <h1 class="form-h-e">New Training Request</h1>
         </div>

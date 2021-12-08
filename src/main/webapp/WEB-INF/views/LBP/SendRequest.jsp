@@ -10,7 +10,7 @@
 	<nav
 		class="navbar navbar-expand-lg navbar-dark bg-primary opacity-90 ps-2 pe-5 py-0">
 		<div class="container-fluid px-5 py-0">
-			<a class="navbar-brand" href="/"> 
+			<a class="navbar-brand" href="../main"> 
 			<img src="../res/logotrmw.png" alt="atos white logo"  width="80" style="padding: 17px 0px 10px 0px;">
 			</a>
 			<button class="navbar-toggler" type="button"
@@ -58,6 +58,9 @@
 		<div class=" header">
 			<div class="row">
 				<div class="col-10">
+				<a type="button" href="../requeriment-all" class="btn"><h5>
+							<i class="fas fa-long-arrow-alt-left"></i> Back
+						</h5></a>
 					<h2>Request</h2>
 
 				</div>
@@ -68,6 +71,9 @@
 				<div class="card border-primary mb-3 b-r">
 					<div class="card-body">
 						<h5 class="card-title card-h">
+						
+						
+						
 							<i class="fas fa-users"></i> Java full-stack Training
 						</h5>
 						<ul class="info-list">

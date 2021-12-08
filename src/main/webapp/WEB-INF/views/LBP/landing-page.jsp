@@ -16,10 +16,27 @@
 		</c:if>
 		<div class="row" style="margin-top: 2rem;">
 			<c:forEach var="requirement" items="${requirements}">
+			
+			<c:if test="${requirement.getRequirementState() == 1}">
+			 	<c:set var = "color" scope = "session" value = "primary"/>
+			 	<c:set var = "status" scope = "session" value = "New"/>
+			</c:if>
+			<c:if test="${requirement.getRequirementState() == 2}">
+			 	<c:set var = "color" scope = "session" value = "danger"/>
+			 	<c:set var = "status" scope = "session" value = "Pending"/>
+			</c:if>
+			<c:if test="${requirement.getRequirementState() == 3}">
+			 	<c:set var = "color" scope = "session" value = "secondary"/>
+			 	<c:set var = "status" scope = "session" value = "In Process"/>
+			</c:if>
+			<c:if test="${requirement.getRequirementState() == 4}">
+			 	<c:set var = "color" scope = "session" value = "success"/>
+			 	<c:set var = "status" scope = "session" value = "Completed"/>
+			</c:if>
 				<div class="col-4">
-					<div class="card border-primary mb-3" style="border-radius: 15px;">
-						<div class="card-body">
-							<span class="badge bg-primary"> ● Pending</span>
+					<div class="card border-${color} mb-3" style="border-radius: 15px;">  
+						<div class="card-body"> 
+							<span class="badge bg-${color}"> ${status}</span>
 							<h5 class="card-title" style="margin-top: 1.5rem;">
 								<i class="fas fa-users" style="color: #0d6efd;"></i>
 								${requirement.getTrainingArea()} Training
@@ -34,29 +51,29 @@
 							<c:if test="${user == 'LBP'}">
 								<c:if test="${requirement.getRequirementState() == 1}">
 									<a href="sendRequest/${requirement.getRequirementID()}"
-										class="btn btn-outline-primary" style="float: right;">View <i
+										class="btn btn-outline-${color}" style="float: right;">View <i
 										class="far fa-eye"></i></a>
 								</c:if>
 								<c:if test="${requirement.getRequirementState() == 2}">
 									<a href="firstRequest/${requirement.getRequirementID()}"
-										class="btn btn-outline-primary" style="float: right;">View <i
+										class="btn btn-outline-${color}" style="float: right;">View <i
 										class="far fa-eye"></i></a>
 								</c:if>
 								<c:if test="${requirement.getRequirementState() == 3}">
 									<a href="firstRequestSendSecond/${requirement.getRequirementID()}"
-										class="btn btn-outline-primary" style="float: right;">View <i
+										class="btn btn-outline-${color}" style="float: right;">View <i
 										class="far fa-eye"></i></a>
 								</c:if>
 								<c:if test="${requirement.getRequirementState() == 4}">
 									<a href="requeriment/${requirement.getRequirementID()}"
-										class="btn btn-outline-primary" style="float: right;">View <i
+										class="btn btn-outline-${color}" style="float: right;">View <i
 										class="far fa-eye"></i></a>
 								</c:if>
 							</c:if>
 							<c:if test="${user == 'TRAINER'}">
 								<c:if test="${requirement.getRequirementState() == 2}">
 									<a href="newSlot/${requirement.getRequirementID()}"
-										class="btn btn-outline-primary" style="float: right;">View <i
+										class="btn btn-outline-${color}" style="float: right;">View <i
 										class="far fa-eye"></i></a>
 								</c:if>
 							</c:if>

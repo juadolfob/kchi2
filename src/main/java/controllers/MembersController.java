@@ -145,7 +145,7 @@ public class MembersController {
 			MembersServices memservice = new MembersServices();
 			memservice.registerSlot(newproposal);
 			
-			return "LBP/landing-page";
+			return "redirect:requirement-trainer";
 	   }
 	
 }

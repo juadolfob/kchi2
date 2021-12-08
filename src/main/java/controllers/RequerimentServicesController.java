@@ -67,14 +67,7 @@ public class RequerimentServicesController {
     {  
 		model.addAttribute("requirement", new RequerimentServices().ReadRequestRequeriment(RequerimentID));
 		List<TrainingProposals> Lista = new TrainerService().GetSlot(RequerimentID);
-	
 		model.addAttribute("slots", Lista);
-	//System.out.println(Lista.toString());
-	
-		for(TrainingProposals T: Lista) {
-			System.out.println(T.getProposalID()+ " " +T.getRequirementID()+ " " +T.getMemberID().getMemberName()+ " " +T.getProposedDate());
-		}
-
 		return "LBP/request_first";
     } 
 

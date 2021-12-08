@@ -104,7 +104,7 @@
             </div>
             <div class="col">
                 <h4>Choose trainer slots</h4>
-                <form action="aproveRequirement">
+                <form action="../aproveRequirement">
                 	<input type="hidden" value="${requirement.getRequirementID()}" name="requirementId"/>
                 	<div id="trainer-list">
 	                	<c:forEach var="proposal" items="${proposals}">

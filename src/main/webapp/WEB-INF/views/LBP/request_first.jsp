@@ -123,7 +123,7 @@
 	                    <label for="vertical">Comment</label>
 	                    <textarea required placeholder="Enter comment" id="vertical" class="form-control b-r" rows="4"></textarea>
 	                </div>
-	                <button class="btn btn-primary btn-labeled b-r" formaction="select-slot/${requirement.getRequirementID()}">
+	                <button class="btn btn-primary btn-labeled b-r" formaction="../select-slot/${requirement.getRequirementID()}">
 	                    Submit
 	                    <span class="btn-label"><i class="fas fa-arrow-right"></i></span>
 	                </button>

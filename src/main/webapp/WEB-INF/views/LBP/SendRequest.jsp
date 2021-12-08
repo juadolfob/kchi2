@@ -95,7 +95,7 @@
 				<div class="col">
 					<h4>Forward to trainers</h4>
 					<c:if test="${!requestSent}">
-						<form action="sendRequestService/${requirement.getRequirementID()}" method="post">
+						<form action="../sendRequestService/${requirement.getRequirementID()}" method="post">
 							<button class="btn btn-primary btn-labeled b-r"> Send information <span
 								class="btn-label"><i class="fas fa-arrow-right"></i></span>
 							</button>

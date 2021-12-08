@@ -93,7 +93,7 @@
 			<div class="col">
 				<h4>Create New Slot</h4>
 
-				<form action="registerSlot">
+				<form action="../registerSlot">
 					<input type="hidden" value="${requirement.getRequirementID()}" name="requirementId"/>
 					<div class="form-group">
 						<label for="slot_date" class="form-label">Proposed Date</label>

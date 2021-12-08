@@ -76,6 +76,11 @@
 										class="btn btn-outline-${color}" style="float: right;">View <i
 										class="far fa-eye"></i></a>
 								</c:if>
+								<c:if test="${requirement.getRequirementState() != 2}">
+									<a href=""
+										class="btn btn-outline-${color}" style="float: right;">View <i
+										class="far fa-eye"></i></a>
+								</c:if>
 							</c:if>
 						</div>
 					</div>

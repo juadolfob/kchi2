@@ -77,6 +77,9 @@
                                 <li><b>Total candidates:</b> <br>${requirement.getTotalCandidates()}</li>
                                 <li><b>User training time zone:</b> <br>${requirement.getTrainingTimeZone()}</li>
                                 <li><b>Total duration days:</b> <br>${requirement.getTotalDurationDays()}</li>
+                                <li><b class="block">Training description:</b>
+                                <label class="block">${requirement.getTrainingDescription()}</label>
+                            </li>
                             </ul>               
                         </section>
                         <section class="Personel-Information-Container" style="margin-top: 1.5rem;">

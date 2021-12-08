@@ -85,6 +85,9 @@
 								class="block">${requirement.getTrainingTimeZone()}</label></li>
 							<li><b class="block">Total duration dates:</b> <label
 								class="block">${requirement.getTotalDurationDays()}</label></li>
+							<li><b class="block">Training description:</b>
+                                <label class="block">${requirement.getTrainingDescription()}</label>
+                            </li>
 						</ul>
 					</div>
 				</div>

@@ -7,7 +7,7 @@
 </head>
 
 <body>
-	<%@ include file="../includes/header_public.jsp"%>
+	<%@ include file="../includes/header_gen.jsp"%>
 	<main class="container main">
 		<div style="margin-top: 7rem;">
 			<form>

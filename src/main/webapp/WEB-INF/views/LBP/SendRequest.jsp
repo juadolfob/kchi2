@@ -6,13 +6,12 @@
 <title>Training Request Options</title>
 </head>
 <body>
-		
-<header>
+		<header>
 	<nav
 		class="navbar navbar-expand-lg navbar-dark bg-primary opacity-90 ps-2 pe-5 py-0">
 		<div class="container-fluid px-5 py-0">
-			<a class="navbar-brand" href="/"> <img
-				src="../res/logo_transparent.png" alt="atos white logo" height="65">
+			<a class="navbar-brand" href="/"> 
+			<img src="../res/logotrmw.png" alt="atos white logo"  width="80" style="padding: 17px 0px 10px 0px;">
 			</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -116,9 +115,10 @@
 			<div class="col-5">
 				<div class="d-flex flex-column">
 					<div class="mb-5">
-						<img src="../res/atos-blue-logo.jfif" alt="atos logo" width="100">
+						<img src="../res/logotrm.png" alt="atos logo" width="100">
 					</div>
-					<div class="mt-5">2021 ATOS, All rights reserved</div>
+					<div class="mt-2" >2021 ATOS, All rights reserved</div>
+					
 				</div>
 			</div>
 

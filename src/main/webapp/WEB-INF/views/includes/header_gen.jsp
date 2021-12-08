@@ -19,17 +19,7 @@
 
 
 				</ul>
-				<div class="navbar-nav    p-2 ms-4 me-5">
-					<li class="nav-item"><a class="nav-link activ ms-3 me-5"
-						aria-current="page" href="#"><strong>About us</strong></a></li>
-					<li class="nav-item"><a class="nav-link activ ms-3 me-5"
-						aria-current="page" href="#"><strong>Help</strong> </a></li>
-					<!--  
-						<li class="nav-item"><a class="nav-link activ ms-3 me-5"
-							aria-current="page" href="signIn"><strong
-								style="color: #2A75E6;">Sign In</strong></a></li>
- 						-->
-				</div>
+				
 			</div>
 		</div>
 	</nav>

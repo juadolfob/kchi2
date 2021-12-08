@@ -1,10 +1,9 @@
-
 <header>
 	<nav
-		class="navbar navbar-expand-lg navbar-dark bg-primary opacity-90 ps-2 pe-5 py-0">
+		class="navbar navbar-expand-lg navbar-light bg-light opacity-90 ps-2 pe-5 py-0">
 		<div class="container-fluid px-5 py-0">
-			<a class="navbar-brand" href="main"> <img
-				src="res/logo_transparent.png" alt="atos white logo" height="65">
+			<a class="navbar-brand" href="/"> 
+			<img src="res/logotrm.png" alt="atos white logo"  width="80" style="padding: 17px 0px 10px 0px;">
 			</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

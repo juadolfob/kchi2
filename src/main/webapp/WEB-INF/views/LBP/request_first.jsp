@@ -60,7 +60,7 @@
             <div class="row">
                 <div class="col-10">
                 <br>
-                    <h2>Learning Bussiness Partner</h2>
+                    <h2>Learning Bussiness Partner</h2> 
                     <br>
                   
                 </div>
@@ -70,7 +70,7 @@
             <div class="col">
                 <div class="card border-primary mb-3 b-r">
                     <div class="card-body">
-                        <h5 class="card-title card-h"><i class="fas fa-users"></i> Java full-stack Training</h5>  
+                        <h5 class="card-title card-h"><i class="fas fa-users"></i> ${requirement.getTrainingArea()}</h5>  
                         <ul class="info-list">
                             <li><b class="block">Id:</b>
                                 <label class="block">${requirement.getRequirementID()}</label>
@@ -82,7 +82,7 @@
                                 <label class="block">${requirement.getTrainingArea()}</label>
                             </li>
                             <li><b class="block">User training start date:</b>
-                                <label class="block">${requirement.getTrainingArea()}</label>
+                                <label class="block">${requirement.getRequestedTrainingStartDate()}</label>
                             </li>
                             <li><b class="block">Total candidates:</b>
                                 <label class="block">${requirement.getTotalCandidates()}</label>

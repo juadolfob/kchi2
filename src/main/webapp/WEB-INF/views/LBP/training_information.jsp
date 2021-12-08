@@ -68,12 +68,12 @@
             </section>
             <section class="Trainning-Card">
                         <section class="card-body">
-                            <h5 class="card-title" style="margin-top: 1.5rem;"><i class="fas fa-users" style="color: green;"></i> Java full-stack Training</h5>  
+                            <h5 class="card-title" style="margin-top: 1.5rem;"><i class="fas fa-users" style="color: green;"></i>${requirement.getTrainingArea()}</h5>  
                             <ul style="list-style: none; padding: 0; line-height: 2.5rem;">
                                 <li><b>Id:</b><br>${requirement.getRequirementID()}</li>
                                 <li><b>User Vertical:</b><br> ${requirement.getRequirementUser()}</li>
                                 <li><b>User training area:</b> <br> ${requirement.getTrainingArea()}</li>
-                                <li><b>User training start date: </b> <br>${requirement.getTrainingArea()}</li>
+                                <li><b>User training start date: </b> <br>${requirement.getRequestedTrainingStartDate()}</li>
                                 <li><b>Total candidates:</b> <br>${requirement.getTotalCandidates()}</li>
                                 <li><b>User training time zone:</b> <br>${requirement.getTrainingTimeZone()}</li>
                                 <li><b>Total duration days:</b> <br>${requirement.getTotalDurationDays()}</li>

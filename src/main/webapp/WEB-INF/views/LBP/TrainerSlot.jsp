@@ -138,6 +138,10 @@
 					<input type="submit" class="btn btn-success btn-labeled"
 						value="Submit" />
 				</form>
+				<form action="../resultMembers">
+				<input type="submit" class="btn btn-success btn-labeled"
+				value="Decline Training" />
+				</form>
 			</div>
 		</div>
 	</main>

@@ -85,7 +85,7 @@
                         <section class="Personel-Information-Container" style="margin-top: 1.5rem;">
                             <section>
                                 <h5>Approved slot by business:</h5>
-                                <h6>${requirementApprove.getTrainerID()}</h6>
+                                <h6>${requirementApprove.getTrainer().getMemberName()}</h6>
                                 <p> ${requirementApprove.getConfirmedTime()}</p>
                             </section>
                             <section class="Personel-Information-card-container">

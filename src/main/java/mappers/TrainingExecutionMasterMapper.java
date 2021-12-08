@@ -5,7 +5,9 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
+import models.LDMemberData;
 import models.TrainingExecutionMaster;
+import services.MembersServices;
 
 public class TrainingExecutionMasterMapper implements RowMapper<TrainingExecutionMaster> {
 
@@ -17,7 +19,8 @@ public class TrainingExecutionMasterMapper implements RowMapper<TrainingExecutio
 		trainingExecution.setRequirementID(result.getString("RequirementID"));
 		trainingExecution.setConfirmedDate(result.getDate("ConfirmedDate"));
 		trainingExecution.setConfirmedTime(result.getString("ConfirmedTime"));
-		trainingExecution.setTrainerID(result.getString("Trainer"));
+		LDMemberData trainer = new MembersServices().getLDMemberById(result.getString("Trainer"));
+		trainingExecution.setTrainer(trainer);
 		trainingExecution.setTotalHRS(result.getInt("TotalHRS"));
 		trainingExecution.setProposalStatus(result.getString("ProposalStatus"));
 		trainingExecution.setTotalParticipantsAllowed(result.getInt("TotalParticipantsAllowed"));

@@ -78,7 +78,7 @@
 							<li><b class="block">User training area:</b><label
 								class="block">${requirement.getTrainingArea()}</label></li>
 							<li><b class="block">User training start date:</b> <label
-								class="block">${requirement.getRequestedTrainingStartDate())}</label></li>
+								class="block">${requirement.getRequestedTrainingStartDate()}</label></li>
 							<li><b class="block">Total candidates:</b> <label
 								class="block">${requirement.getTotalCandidates()}</label></li>
 							<li><b class="block">User training time zone:</b> <label

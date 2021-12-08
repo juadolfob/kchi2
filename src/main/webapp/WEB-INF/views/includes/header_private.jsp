@@ -39,7 +39,7 @@
 						class="opacity-50" alt="user solid icon" width="27" height="27">
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="userDropdown">
-						<li><a class="dropdown-item" href="#">Logout</a></li>
+						<li><a class="dropdown-item" href="main">Logout</a></li>
 					</ul>
 				</div>
 			</div>

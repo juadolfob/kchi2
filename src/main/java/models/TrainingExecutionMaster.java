@@ -11,7 +11,7 @@ public class TrainingExecutionMaster {
 	private String proposalStatus;
 	private int totalParticipantsAllowed;
 	private String requirementID;
-	private String trainerID;
+	private LDMemberData trainer;
 	
 	public String getExecutionID() {
 		return executionID;
@@ -55,10 +55,10 @@ public class TrainingExecutionMaster {
 	public void setRequirementID(String requirementId) {
 		this.requirementID = requirementId;
 	}
-	public String getTrainerID() {
-		return trainerID;
+	public LDMemberData getTrainer() {
+		return trainer;
 	}
-	public void setTrainerID(String string) {
-		this.trainerID = string;
+	public void setTrainer(LDMemberData trainer) {
+		this.trainer = trainer;
 	}
 }

@@ -9,7 +9,7 @@
 	display: block;
 }
 
-.form-check-label {
+.in-line {
 	display: inline-block;
 }
 
@@ -22,7 +22,7 @@
 	margin-left: 10px;
 }
 
-.form-check {
+.check-block {
 	margin-top: 10px;
 }
 
@@ -34,6 +34,7 @@
 	margin-top: 1.5rem;
 }
 
+
 .card-h i {
 	color: #009908;
 }
@@ -41,6 +42,8 @@
 .header {
 	margin-top: 3rem;
 }
+
+
 
 .request-content {
 	margin-top: 20px;
@@ -50,4 +53,4 @@
 .comment-block {
 	margin-top: 20px;
 	margin-bottom: 20px;
-}
+} 

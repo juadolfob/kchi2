@@ -22,7 +22,7 @@
 				<div class="card border-primary mb-3 b-r">
 					<div class="card-body">
 						<h5 class="card-title card-h">
-							<i class="fas fa-users"></i> Java full-stack Training
+							<i class="fas fa-users"></i> ${requirement.getTrainingArea()}
 						</h5>
 						<ul class="info-list">
 							<li><b class="block">Id:</b> <label class="block">${requirement.getRequirementID()}</label>

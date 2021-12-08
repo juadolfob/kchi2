@@ -71,10 +71,9 @@
 				<div class="card border-primary mb-3 b-r">
 					<div class="card-body">
 						<h5 class="card-title card-h">
-						
-						
-						
-							<i class="fas fa-users"></i> Java full-stack Training
+
+							<i class="fas fa-users"></i> ${requirement.getTrainingArea()}
+
 						</h5>
 						<ul class="info-list">
 							<li><b class="block">Id:</b> <label class="block">${requirement.getRequirementID()}</label>
@@ -82,7 +81,7 @@
 							<li><b class="block">User vertical:</b> <label class="block">${requirement.getRequirementUser()}</label>
 							</li>
 							<li><b class="block">User training area:</b> <label
-								class="block">${requirement.getTrainingArea()}</label></li>
+								class="block">${requirement.getTrainingArea()}</label></li> 
 							<li><b class="block">User training start date:</b> <label
 								class="block">${requirement.getRequestedTrainingStartDate()}</label>
 							</li>
@@ -92,6 +91,9 @@
 								class="block">${requirement.getTrainingTimeZone()}</label></li>
 							<li><b class="block">Total duration dates:</b> <label
 								class="block">${requirement.getTotalDurationDays()}</label></li>
+							<li><b class="block">Training description:</b>
+                                <label class="block">${requirement.getTrainingDescription()}</label>
+                            </li>
 						</ul>
 					</div>
 				</div>

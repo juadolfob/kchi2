@@ -66,7 +66,7 @@ public class RequerimentServices {
 	
 	public void aproveRequirement(TrainingRequirementMaster requirement, TrainingProposals proposal) {
 		String id = new MembersServices().getNewId("TrainingExecutionMaster", "ExecutionID");
-		Object[] params = new Object[] {id, requirement.getRequirementID(), proposal.getProposedDate(), proposal.getPropsedTime(), proposal.getMemberID().getMemberName(), proposal.getProposedDuration(), "Confirmed", requirement.getTotalCandidates()};
+		Object[] params = new Object[] {id, requirement.getRequirementID(), proposal.getProposedDate(), proposal.getPropsedTime(), proposal.getMemberID().getMemberId(), proposal.getProposedDuration(), "Confirmed", requirement.getTotalCandidates()};
 		this.template.update("insert into trainingExecutionMaster values (?, ?, ?, ?, ?, ?, ?, ?)", params);
 		this.changeRequirementState(requirement.getRequirementID(), 4);
 	}

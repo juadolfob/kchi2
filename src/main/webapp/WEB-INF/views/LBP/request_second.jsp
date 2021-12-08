@@ -11,7 +11,7 @@
 
 <link rel="stylesheet" href="../css/request_second.css">
 <link rel="stylesheet" href="../css/style.css">
-<title>Training Request Options</title>
+<title>Training Request Options</title> 
 </head>
 <body>
 		
@@ -79,7 +79,7 @@
             <div class="col">
                 <div class="card border-success mb-3 b-r">
                     <div class="card-body">
-                        <h5 class="card-title card-h"><i class="fas fa-users"></i> ${requirement.getTrainingDescription()}</h5>  
+                        <h5 class="card-title card-h"><i class="fas fa-users"></i> ${requirement.getTrainingArea()}</h5>  
                         <ul class="info-list">
                             <li><b class="block">Id:</b>
                                 <label class="block">${requirement.getRequirementID()}</label>
@@ -101,6 +101,9 @@
                             </li>
                             <li><b class="block">Total duration dates:</b>
                                 <label class="block">${requirement.getTotalDurationDays()}</label>
+                            </li>
+                                <li><b class="block">Training description:</b>
+                                <label class="block">${requirement.getTrainingDescription()}</label>
                             </li>
                         </ul>
                     </div>

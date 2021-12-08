@@ -15,7 +15,7 @@
 	<nav
 		class="navbar navbar-expand-lg navbar-light bg-light opacity-90 ps-2 pe-5 py-0">
 		<div class="container-fluid px-5 py-0">
-			<a class="navbar-brand" href="/"> 
+			<a class="navbar-brand" href="../main"> 
 			<img src="../res/logotrm.png" alt="atos white logo"  width="80" style="padding: 17px 0px 10px 0px;">
 			</a>
 			<button class="navbar-toggler" type="button"
@@ -62,6 +62,11 @@
     <main>
         <section class="container-card-information">
             <section class="Title">
+            <br>
+            <a type="button" href="../requeriment-all" class="btn"><h5>
+							<i class="fas fa-long-arrow-alt-left"></i> Back
+						</h5></a>
+            
             <br>
                 <h1 style="color:#424949;">Business Executive Information</h1>
                 <br>

@@ -3,6 +3,7 @@
 <%@ include file="../includes/meta.jsp"%>
 </head>
 <body>
+<%-- <c:set var = "name" scope = "session" value = "${name}"/> --%>
 <%@ include file="../includes/header_private.jsp"%>
 	<div class="container" style="margin-top: 3rem;">
 		<c:if test="${user == 'DEL'}">

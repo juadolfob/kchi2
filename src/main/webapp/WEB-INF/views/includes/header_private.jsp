@@ -32,6 +32,7 @@
 							<li><a class="dropdown-item" href="#">Trainings Status</a></li>
 						</ul></li>
 				</ul>
+				<label>${name}</label>
 				<div class="dropdown bg-white rounded-circle p-2 ms-4 me-5">
 					<a class="dropdown-toggle dropdown-noicon" href="#"
 						id="userDropdown" role="button" data-bs-toggle="dropdown"

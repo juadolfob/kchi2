@@ -115,7 +115,7 @@ public class MembersController {
 			String proposalID = newIDService.getNewId("TrainingProposals", "ProporsalID");
 			reqID.setRequirementID(servlet.getParameter("requirementId"));
 			int selected = 0;
-			member.setMemberId("MEM004");
+			member.setMemberId("MEM003");
 			
 			String PropsedTime = servlet.getParameter("slot_time");
 			int ProposedDuration = Integer.parseInt(servlet.getParameter("slot_duration"));

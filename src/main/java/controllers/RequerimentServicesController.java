@@ -51,7 +51,7 @@ public class RequerimentServicesController {
 		requirement.setRequestedTrainingStartDate(startDate);
 		requirement.setRequirementReceivedDate(new Date());
 		//Usuario en la sesion:
-		requirement.setRequirementUser("Get from session");
+		requirement.setRequirementUser("Aravind Manoharan");
 		MembersServices members = new MembersServices();
 		requirement.setRequirementUserVertical(members.getVerticalMasterById(servlet.getParameter("verticalMaster")));
 		requirement.setTotalCandidates(Integer.parseInt(servlet.getParameter("candidates")));
@@ -107,6 +107,7 @@ public class RequerimentServicesController {
     {  
 		model.addAttribute("requirements", new RequerimentServices().ReadAllRequestRequeriment());
 		model.addAttribute("user", "LBP");
+		model.addAttribute("name", "Welcome Mahesh");
 		return "LBP/landing-page";
     }
 	
@@ -115,6 +116,7 @@ public class RequerimentServicesController {
     {  
 		model.addAttribute("requirements", new RequerimentServices().ReadAllRequestRequeriment());
 		model.addAttribute("user", "DEL");
+		model.addAttribute("name", "Welcome Aravind");
 		return "LBP/landing-page";
     }
 	
@@ -122,6 +124,7 @@ public class RequerimentServicesController {
 	public String landingTrainer (Model model) {
 		model.addAttribute("requirements", new RequerimentServices().readSendRequirement());
 		model.addAttribute("user", "TRAINER");
+		model.addAttribute("name", "Welcome Chhaya");
 		return "LBP/landing-page";
 	}
 	

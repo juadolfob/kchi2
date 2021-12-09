@@ -7,6 +7,8 @@
 <head>
 <%@ include file="../includes/meta.jsp"%>
 <link rel="stylesheet" href="css/content.css" />
+
+ 
 <title>Main</title>
 <!-- <c:set var="url">${pageContext.request.requestURL}</c:set> -->
 </head>
@@ -19,22 +21,18 @@
 
 
 
-		<div style="margin-top: 4rem;">
+		<div style="margin-top: 4rem;"  >
 
 			<div class="row justify-content-around">
 				<div class="col-4">
 					<div style="margin-top: 7rem;">
-						<h5 class="subtitle">Start Learning</h5>
-						<h1 class="title">Thinking Forward</h1>
-						<p class="paragraph">Lorem ipsum dolor sit amet, consectetur
-							adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-							dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-							exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat.</p>
-						<a type="button" href="signInDelivery"
-							class="btn btn-outline-primary">Get Started Delivery</a> <a
-							type="button" href="signInLD" class="btn btn-primary">Get
-							Started L&D</a>
+						<h5 class="subtitle"> Training for All</h5>
+						<h1 class="title">Get Started</h1>
+						<p class="paragraph">The purpose of the project is to help L&D to better communicate with the business
+requirements. The communication Chanel is the main requirement of the
+application between business and L&D..</p>
+					<a type="button" href="signInDelivery" class="btn btn-outline-primary">Get Started Delivery</a> 
+						<a type="button" href="signInLD" class="btn btn-primary">Get Started L&D</a>
 					</div>
 				</div>
 				<div class="col-5">
@@ -65,13 +63,13 @@
 						</div>
 					</div>
 					<div class="col-4">
-						<div style="margin-top: 9rem;">
+						<div style="margin-top: 9rem;"  >
 							<h1 class="titletwo">About this project</h1>
-							<p class="paragraphtwo">Lorem ipsum dolor sit amet,
-								consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-								labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-								nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-								commodo consequat.</p>
+							<p class="paragraphtwo">The web application must help the delivery
+manager to create and track training request.
+The system must let the LBP to see all the
+new request and process the requests.
+</p>
 						</div>
 					</div>
 				</div>

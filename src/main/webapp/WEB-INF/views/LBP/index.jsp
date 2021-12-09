@@ -28,9 +28,9 @@
 					<div style="margin-top: 7rem;">
 						<h5 class="subtitle"> Training for All</h5>
 						<h1 class="title">Get Started</h1>
-						<p class="paragraph">The purpose of the project is to help L&D to better communicate with the business
-requirements. The communication Chanel is the main requirement of the
-application between business and L&D..</p>
+						<p class="paragraph">TMS exists to help the
+ L&D team to communicate better with the business requirements. A proper and 
+effective communication channel is the main solution TMS offers</p>
 					<a type="button" href="signInDelivery" class="btn btn-outline-primary">Get Started Delivery</a> 
 						<a type="button" href="signInLD" class="btn btn-primary">Get Started L&D</a>
 					</div>
@@ -65,10 +65,8 @@ application between business and L&D..</p>
 					<div class="col-4">
 						<div style="margin-top: 9rem;"  >
 							<h1 class="titletwo">About this project</h1>
-							<p class="paragraphtwo">The web application must help the delivery
-manager to create and track training request.
-The system must let the LBP to see all the
-new request and process the requests.
+							<p class="paragraphtwo">TMS helps the delivery manager in creating and tracking training 
+requirements. TMS allows the LBP to see and process all requests.
 </p>
 						</div>
 					</div>

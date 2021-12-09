@@ -91,18 +91,19 @@
                                 <h6>${requirementApprove.getTrainer().getMemberName()}</h6>
                                 <p> ${requirementApprove.getConfirmedTime()}</p>
                             </section>
+                            
                             <section class="Personel-Information-card-container">
                             
-
+							<c:forEach items="${participandatalist}" var="PDL">
                                 <section class="card" name="PDlist">
-                                <c:forEach items="${participandatalist}" var="PDL">
+                                
                                     <span></span>
                                     
                                     <h5 class="Employee-Name" value="${PDL.employeeID}"><i class="fas fa-user" style="color: green;"></i> ${PDL.employeeName}</h5>
                                     <p class="Employee-Email" value="${PDL.employeeID}">${PDL.email}</p>
-                                </c:forEach>
+                                
                                 </section>
-
+							</c:forEach>
                             </section>
                             
                         </section>

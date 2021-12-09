@@ -13,8 +13,8 @@
 			<form>
 				<div class="row justify-content-around">
 					<div class="col-4">
-						<div style="margin-top: 7rem;">
-							<div class="col-7 title-form text-secondary">
+						<div style="margin-top: 8rem;">
+							<div class="col-8 title-form text-secondary">
 								<img src="res/user-solid.svg" width="30" height="30"
 									class="opacity-50" alt="user icon" />
 								<h1>Sign In Delivery</h1>

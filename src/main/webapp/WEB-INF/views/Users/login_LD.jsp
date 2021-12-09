@@ -71,7 +71,7 @@
 							<div class="col text-center">
 								<a type="button" href="requeriment-all" class="btn btn-primary btn-labeled redondeo">
 									Sign In</a>
-								<a type="button" href="requirement-trainer" class="btn btn-primary btn-labeled redondeo">
+								<a type="button" href="requirement-trainer" class="btn btn-outline-primary btn-labeled redondeo">
 									Sign In (Trainer)</a>
 							</div>
 						</div>

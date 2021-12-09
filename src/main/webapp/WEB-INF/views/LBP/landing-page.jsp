@@ -37,14 +37,19 @@
 					<div class="card border-${color} mb-3" style="border-radius: 15px;">  
 						<div class="card-body"> 
 							<span class="badge bg-${color}"> ${status}</span>
-							<h5 class="card-title" style="margin-top: 1.5rem;">
-								<i class="fas fa-users" style="color: #0d6efd;"></i>
+							<h5 class="card-title" style="margin-top: 1.5rem; color: #424949;">
+								<i class="fas fa-users" style="color: #424949;"></i>
 								${requirement.getTrainingArea()} Training
 							</h5>
+							
 							<ul style="list-style: none; padding: 0; line-height: 2.5rem;">
-								<li><b>Id:</b> ${requirement.getRequirementID()}</li>
-								<li><b>Name:</b> ${requirement.getRequirementUser()}</li>
-								<li><b>Date:</b>
+								<li><b style="color: #515A5A;">Id:</b> ${requirement.getRequirementID()}</li>
+								
+							
+								<li><b style="color: #515A5A;">Name:</b> ${requirement.getRequirementUser()}</li>
+								
+							
+								<li><b style="color: #515A5A;">Date:</b>
 									${requirement.getRequestedTrainingStartDate()}</li>
 							</ul>
 

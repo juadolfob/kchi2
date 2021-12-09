@@ -59,7 +59,7 @@
 			<div class="row">
 				<div class="col-10">
 				<br>
-				 <a type="button" href="../requeriment-all" class="btn"><h5>
+				 <a type="button" href="../requirement-trainer" class="btn"><h5>
 							<i class="fas fa-long-arrow-alt-left"></i> Back
 						</h5></a>
 						<br>

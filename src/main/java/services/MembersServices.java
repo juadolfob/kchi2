@@ -105,9 +105,9 @@ public class MembersServices {
 		String value = lastId.substring(3, lastId.length());
 		int newValue = Integer.parseInt(value) + 1;
 		String sufix = newValue + "";
-//		while (sufix.length() < 3) {
-//			sufix = "0" + sufix;
-//		}
+		while (sufix.length() < 3) {
+			sufix = "0" + sufix;
+		}
 		return prefix + sufix;
 	}
 	

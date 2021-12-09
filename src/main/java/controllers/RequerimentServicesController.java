@@ -60,7 +60,7 @@ public class RequerimentServicesController {
 		requirement.setTrainingDescription(servlet.getParameter("description"));
 		requirement.setTrainingTimeZone(servlet.getParameter("timeZone"));
 		new RequerimentServices().createRequestRequeriment(requirement);
-		return new ModelAndView("redirect:/requeriment-all");
+		return new ModelAndView("redirect:/requeriment-del");
     }
 	@RequestMapping("/firstRequest/{RequerimentID}")
     public String firstRequest(ModelMap model , @PathVariable String RequerimentID)
@@ -107,6 +107,14 @@ public class RequerimentServicesController {
     {  
 		model.addAttribute("requirements", new RequerimentServices().ReadAllRequestRequeriment());
 		model.addAttribute("user", "LBP");
+		return "LBP/landing-page";
+    }
+	
+	@RequestMapping("/requeriment-del")
+    public String landingDelivery(Model model)  
+    {  
+		model.addAttribute("requirements", new RequerimentServices().ReadAllRequestRequeriment());
+		model.addAttribute("user", "DEL");
 		return "LBP/landing-page";
     }
 	

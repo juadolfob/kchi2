@@ -64,7 +64,7 @@
 							</div>
 							<br />
 							<div class="col text-center">
-								<a type="button" href="requirement-trainer" class="btn btn-primary btn-labeled redondeo">
+								<a type="button" href="requeriment-del" class="btn btn-primary btn-labeled redondeo">
 									Sign up</a>
 							</div>
 						</div>

@@ -12,7 +12,7 @@
         <div class="col-7 form-h">
         
         <br>
-         <a type="button" href="../requeriment-all" class="btn"><h5>
+         <a type="button" href="requeriment-del" class="btn"><h5>
 							<i class="fas fa-long-arrow-alt-left"></i> Back
 						</h5></a>
         <br>

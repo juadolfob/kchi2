@@ -5,7 +5,7 @@
 <body>
 <%@ include file="../includes/header_private.jsp"%>
 	<div class="container" style="margin-top: 3rem;">
-		<c:if test="${user == 'LBP'}">
+		<c:if test="${user == 'DEL'}">
 			<div class="row" style="margin-top: 1.5rem;">
 				<div class="col-12">
 					<a type="button" href="newRequest" class="btn"><h5>
@@ -48,7 +48,7 @@
 									${requirement.getRequestedTrainingStartDate()}</li>
 							</ul>
 
-							<c:if test="${user == 'LBP'}">
+							<c:if test="${user == 'LBP' || user == 'DEL'}">
 								<c:if test="${requirement.getRequirementState() == 1}">
 									<a href="sendRequest/${requirement.getRequirementID()}"
 										class="btn btn-outline-${color}" style="float: right;">View <i

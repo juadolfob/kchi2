@@ -37,24 +37,6 @@
 										class="fas fa-lock"></i>
 								</div>
 							</div>
-
-
-							<div class="form-group">
-								<label for="user_role" class="form-label">User Vertical</label>
-								<br>
-								<!--<div class="icon-input">
-              <input type="text" required placeholder="Enter role" id="user_role" class="form-control padding-inputs redondeo"/>
-              <i class="fas fa-tag"></i>
-            </div>-->
-								<div class="icon-input">
-									<select class="form-control padding-inputs redondeo"
-										name="ldrole">
-										<c:forEach items="${ldroles}" var="role">
-											<option value="${role.ldRoleID}">${role.ldRoleName}</option>
-										</c:forEach>
-									</select> <i class="fas fa-user-friends"></i>
-								</div>
-							</div>
 							<br />
 							<div style="text-align: center;">
 								<div class="d-inline p-2">Don't have an acount?</div>
@@ -65,7 +47,7 @@
 							<br />
 							<div class="col text-center">
 								<a type="button" href="requeriment-del" class="btn btn-primary btn-labeled redondeo">
-									Sign up</a>
+									Sign In</a>
 							</div>
 						</div>
 					</div>

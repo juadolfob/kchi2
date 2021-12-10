@@ -148,7 +148,7 @@ public class RequerimentServicesController {
 		TrainingRequirementMaster requirement = requirementService.ReadRequestRequeriment(requirementId);
 		TrainingProposals proposal = new TrainerService().getSlot(proposalId);
 		requirementService.aproveRequirement(requirement, proposal);
-		return new ModelAndView("redirect:/requeriment-all");
+		return new ModelAndView("redirect:/requeriment-del");
 	}
 	
 	@RequestMapping("/select-slot/{requirementId}")

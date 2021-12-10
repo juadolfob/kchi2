@@ -144,11 +144,10 @@
 					</div>
 					<input type="submit" class="btn btn-success btn-labeled"
 						value="Submit" />
+						
+						<a href="../requirement-trainer" type="button" class="btn btn-danger btn-labeled">Decline Training</a>
 				</form>
-				<form action="../resultMembers">
-				<input type="submit" class="btn btn-success btn-labeled"
-				value="Decline Training" />
-				</form>
+				
 			</div>
 		</div>
 	</main>

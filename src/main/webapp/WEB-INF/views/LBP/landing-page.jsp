@@ -32,7 +32,7 @@
 			</c:if>
 			<c:if test="${requirement.getRequirementState() == 4}">
 			 	<c:set var = "color" scope = "session" value = "success"/>
-			 	<c:set var = "status" scope = "session" value = "Completed"/>
+			 	<c:set var = "status" scope = "session" value = "Approved"/>
 			</c:if>
 				<div class="col-4">
 					<div class="card border-${color} mb-3" style="border-radius: 15px;">  

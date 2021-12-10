@@ -127,7 +127,7 @@ public class MembersController {
 			
 			Date proposedDate; 
 			try {
-				proposedDate = new SimpleDateFormat("dd/MM/yyyy").parse(servlet.getParameter("slot_date"));
+				proposedDate = new SimpleDateFormat("yyyy-MM-dd").parse(servlet.getParameter("slot_date"));
 			} catch (ParseException e) {
 				proposedDate = new Date();
 			}

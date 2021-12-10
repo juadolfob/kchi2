@@ -2,6 +2,8 @@ package models;
 
 import java.util.Date;
 
+import models.util.DateFormatter;
+
 public class TrainingRequirementMaster {
 	private String requirementID;
 	private Date requirementReceivedDate;
@@ -80,5 +82,8 @@ public class TrainingRequirementMaster {
 	}
 	public void setRequirementState(int requirementState) {
 		this.requirementState = requirementState;
+	}
+	public String getFormattedStartDate() {
+		return DateFormatter.getFormattedDate(this.requestedTrainingStartDate);
 	}
 }

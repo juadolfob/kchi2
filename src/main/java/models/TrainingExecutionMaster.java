@@ -2,6 +2,8 @@ package models;
 
 import java.util.Date;
 
+import models.util.DateFormatter;
+
 public class TrainingExecutionMaster {
 
 	private String executionID;
@@ -60,5 +62,8 @@ public class TrainingExecutionMaster {
 	}
 	public void setTrainer(LDMemberData trainer) {
 		this.trainer = trainer;
+	}
+	public String getFormattedConfirmedDate() {
+		return DateFormatter.getFormattedDate(this.confirmedDate);
 	}
 }

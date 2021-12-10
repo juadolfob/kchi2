@@ -83,7 +83,7 @@
 							<li><b class="block">User training area:</b> <label
 								class="block">${requirement.getTrainingArea()}</label></li> 
 							<li><b class="block">User training start date:</b> <label
-								class="block">${requirement.getRequestedTrainingStartDate()}</label>
+								class="block">${requirement.getFormattedStartDate()}</label>
 							</li>
 							<li><b class="block">Total candidates:</b> <label
 								class="block">${requirement.getTotalCandidates()}</label></li>

@@ -10,6 +10,7 @@ main {
 .Trainning-Card {
 	display: flex;
 	border: solid green 1px;
+	border-radius: 10px;
 }
 
 .card-body {

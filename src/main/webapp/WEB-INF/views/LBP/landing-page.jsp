@@ -51,7 +51,7 @@
 								
 							
 								<li><b style="color: #515A5A;">Date:</b>
-									${requirement.getRequestedTrainingStartDate()}</li>
+									${requirement.getFormattedStartDate()}</li>
 							</ul>
 
 							<c:if test="${user == 'LBP' || user == 'DEL'}">

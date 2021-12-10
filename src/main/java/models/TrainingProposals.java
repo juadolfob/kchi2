@@ -2,6 +2,8 @@ package models;
 
 import java.util.Date;
 
+import models.util.DateFormatter;
+
 public class TrainingProposals {
 	private String proposalID;
 	private TrainingRequirementMaster requirementID;
@@ -52,5 +54,8 @@ public class TrainingProposals {
 	}
 	public void setProposedDuration(int proposedDuration) {
 		ProposedDuration = proposedDuration;
+	}
+	public String getFormattedProposedDate() {
+		return DateFormatter.getFormattedDate(this.proposedDate);
 	}
 }

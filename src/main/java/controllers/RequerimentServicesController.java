@@ -44,7 +44,7 @@ public class RequerimentServicesController {
 		TrainingRequirementMaster requirement = new TrainingRequirementMaster();
 		Date startDate;
 		try {
-			startDate = new SimpleDateFormat("dd/MM/yyyy").parse(servlet.getParameter("startDate"));
+			startDate = new SimpleDateFormat("yyyy-MM-dd").parse(servlet.getParameter("startDate"));
 		} catch (ParseException e) {
 			startDate = new Date();
 		}

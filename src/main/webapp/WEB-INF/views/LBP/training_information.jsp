@@ -78,7 +78,7 @@
                                 <li><b>Id:</b><br>${requirement.getRequirementID()}</li>
                                 <li><b>User Vertical:</b><br> ${requirement.getRequirementUser()}</li>
                                 <li><b>User training area:</b> <br> ${requirement.getTrainingArea()}</li>
-                                <li><b>User training start date: </b> <br>${requirement.getRequestedTrainingStartDate()}</li>
+                                <li><b>User training start date: </b> <br>${requirement.getFormattedStartDate()}</li>
                                 <li><b>Total candidates:</b> <br>${requirement.getTotalCandidates()}</li>
                                 <li><b>User training time zone:</b> <br>${requirement.getTrainingTimeZone()}</li>
                                 <li><b>Total duration days:</b> <br>${requirement.getTotalDurationDays()}</li>
@@ -89,7 +89,8 @@
                             <section>
                                 <h5>Approved slot by business:</h5>
                                 <h6>${requirementApprove.getTrainer().getMemberName()}</h6>
-                                <p> ${requirementApprove.getConfirmedTime()}</p>
+                                <label> ${requirementApprove.getFormattedConfirmedDate()}</label>
+                                <p>${requirementApprove.getConfirmedTime()}</p>
                             </section>
                             
                             <section class="Personel-Information-card-container">

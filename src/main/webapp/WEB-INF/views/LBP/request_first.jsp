@@ -89,7 +89,7 @@
                                 <label class="block">${requirement.getTrainingArea()}</label>
                             </li>
                             <li><b class="block">User training start date:</b>
-                                <label class="block">${requirement.getRequestedTrainingStartDate()}</label>
+                                <label class="block">${requirement.getFormattedStartDate()}</label>
                             </li>
                             <li><b class="block">Total candidates:</b>
                                 <label class="block">${requirement.getTotalCandidates()}</label>
@@ -124,6 +124,10 @@
 		                            <div>
 		                                <label>Time:</label>
 		                                <label>${slot.getPropsedTime()}</label>
+		                            </div>
+		                            <div>
+		                                <label>Date:</label>
+		                                <label>${slot.getFormattedProposedDate()}</label>
 		                            </div>
 		                        </div>
 		                    </div>

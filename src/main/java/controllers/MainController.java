@@ -1,151 +1,140 @@
 package controllers;
 
-import java.util.Date;
+import java.io.IOException;
 import java.util.List;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;  
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import models.LDMemberData;
-import models.LDRoles;
-import models.TrainingProposals;
-import models.TrainingRequirementMaster;
-import services.MembersServices;
-import services.RequerimentServices;
 
+import models.Reminder;
+import services.ReminderServices;
 
 @Controller
-public class MembersController {
-	
-	
-	@RequestMapping({"/","/main"}) 
-    public String index()
-    {  
-		
-		
-		return "LBP/index";
-    } 
-	
-    @RequestMapping("/members")
-    public String main()
-    {  
-		return "LBP/training_information";
-    } 
-    
-    @RequestMapping("/signInLD")  
-    public String signinLD()  
-    {  
-		return "Users/login_LD";
-    }
-    
-	@RequestMapping("/signInDelivery")  
-    public String signinDelivery()  
-    {  
-		return "Users/login_Delivery";
-    }
-     
-	@RequestMapping("/signUp")  
-    public String registerPage(Model model)  
-    {  
-		List<LDRoles> ldroleslist = new MembersServices().getLDRoles();
-		model.addAttribute("ldroles",ldroleslist);
-		return "Users/register";
-    }
-	
-	@RequestMapping("/resultMembers")  
-	 public String  resultMembers(HttpServletRequest servlet)
-    {  
-		return "LBP/landing-page";
-    }
-    
-	@RequestMapping("/registerMember") 
-	 public String registerMember(HttpServletRequest servlet)
-	 {
-		LDRoles role = new LDRoles();
-		String memberId = "MEM20";
-		String memberName = servlet.getParameter("user_name");
-		String memberContact = servlet.getParameter("user_contact");
-		String memberLocation = servlet.getParameter("user_city");
-		String memberEmail = servlet.getParameter("user_email");
-		String ldRoleID = servlet.getParameter("ldrole");
-		role.setLdRoleID(ldRoleID);
-		
-		LDMemberData member = new LDMemberData();
-		member.setMemberId(memberId);
-		member.setMemberName(memberName);
-		member.setMemberContact(memberContact);
-		member.setMemberLocation(memberLocation);
-		member.setMemberEmail(memberEmail);
-		member.setLdRoleID(role);
-		
-		MembersServices memserv = new MembersServices();
-		memserv.signUp(member);
-		
-		System.out.println(memberId);
-		System.out.println(memberName);
-		System.out.println(memberContact);
-		System.out.println(ldRoleID);
-		System.out.println(memberEmail);
+public class MainController {
 
-		return "LBP/landing-page";
-	 }
-	
-	@RequestMapping("/newSlot/{requirementId}")  
-	 public String  newSlot(Model model, @PathVariable String requirementId)
-	   {  
-			model.addAttribute("requirement", new RequerimentServices().ReadRequestRequeriment(requirementId));
-			return "LBP/TrainerSlot";
-	   }
-	
-	@RequestMapping("/registerSlot")  
-	 public String  registerSlot(HttpServletRequest servlet) throws ParseException
-	   {  
-			MembersServices newIDService = new MembersServices();
-			
-			TrainingProposals proposal = new TrainingProposals();
-			TrainingRequirementMaster reqID = new TrainingRequirementMaster();
-			LDMemberData member = new LDMemberData();
-			String proposalID = newIDService.getNewId("TrainingProposals", "ProporsalID");
-			reqID.setRequirementID(servlet.getParameter("requirementId"));
-			int selected = 0;
-			member.setMemberId("MEM003");
-			
-			String PropsedTime = servlet.getParameter("slot_time");
-			int ProposedDuration = Integer.parseInt(servlet.getParameter("slot_duration"));
-			
-//			String proposedDate = servlet.getParameter("slot_date");
-//			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-//			SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MMM-yy");
-//			System.out.println(sdf2.format(sdf.parse(proposedDate))); 
-			
-			Date proposedDate; 
+	@RequestMapping("/")
+	public String index(Model model, HttpServletRequest servlet) {
+		String country = servlet.getParameter("country");
+		String countryInfo = null;
+		JSONObject json = null;
+		if (country != null) {
 			try {
-				proposedDate = new SimpleDateFormat("yyyy-MM-dd").parse(servlet.getParameter("slot_date"));
-			} catch (ParseException e) {
-				proposedDate = new Date();
+				json = JsonReader.readJsonFromUrl("https://en.wikipedia.org/api/rest_v1/page/summary/" + country);
+			} catch (JSONException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-			
-			
-			TrainingProposals newproposal = new TrainingProposals();
-			newproposal.setProposalID(proposalID);
-			newproposal.setRequirementID(reqID);
-			newproposal.setSelected(selected);
-			newproposal.setMemberID(member);
-			newproposal.setProposedDate(proposedDate);
-			newproposal.setPropsedTime(PropsedTime);
-			newproposal.setProposedDuration(ProposedDuration);
-			
-			MembersServices memservice = new MembersServices();
-			memservice.registerSlot(newproposal);
-			
-			return "redirect:requirement-trainer";
-	   }
+			countryInfo = json.get("extract_html").toString();
+			System.out.println(countryInfo);
+		}
+		model.addAttribute("country", country);
+		model.addAttribute("countryInfo", countryInfo);
+		return "index";
+	}
+
+	@RequestMapping("/api/getAll")
+	public String getAll(Model model) {
+		List<Reminder> Reminders = new ReminderServices().getAll();
+		String response = "[";
+		int i = 0;
+		for (Reminder reminder : Reminders) {
+			if (i++ == Reminders.size() - 1) {
+				response = response + reminder.toJSON();
+			} else {
+				response = response + reminder.toJSON() + ",";
+			}
+		}
+		response = response + "]";
+		model.addAttribute("response", response);
+		return "response";
+	}
+
+	@RequestMapping("/api/get/{id}")
+	public String getID(Model model, @PathVariable String id) {
+
+		int nid = 0;
+		String response = "{}";
+
+		try {
+			nid = Integer.parseInt(id);
+		} catch (NumberFormatException e) {
+			return "response";
+		}
+
+		List<Reminder> Reminders = new ReminderServices().getByID(nid);
+
+		if (Reminders.size() != 0) {
+			response = "";
+			int i = 0;
+			for (Reminder reminder : Reminders) {
+				response = response + reminder.toJSON();
+				if (!(i++ == Reminders.size() - 1)) {
+					response = response + ",";
+				}
+			}
+		}
+
+		model.addAttribute("response", response);
+		return "response";
+
+	}
+
+	@RequestMapping("/api/put")
+	public String put(Model model, HttpServletRequest servlet) {
+		
+		String id = servlet.getParameter("id");
+		String reminder = servlet.getParameter("reminder");
+		
+		System.out.println(id);
+		System.out.println(reminder);
+		
+		ReminderServices Reminders = new ReminderServices();
+		Reminders.put(Integer.parseInt(id),reminder);
+		
+		model.addAttribute("response", "{\"response\":\"request sent\"}");
+		return "response";
+
+	}
 	
+	@RequestMapping("/api/update")
+	public String update(Model model, HttpServletRequest servlet) {
+		
+		String id = servlet.getParameter("id");
+		String reminder = servlet.getParameter("reminder");
+		
+		System.out.println(id);
+		System.out.println(reminder);
+		
+		ReminderServices Reminders = new ReminderServices();
+		Reminders.update(Integer.parseInt(id),reminder);
+		
+		model.addAttribute("response", "{\"response\":\"request sent\"}");
+		return "response";
+
+	}
+
+	@RequestMapping("/api/delete")
+	public String delete(Model model, HttpServletRequest servlet) {
+		
+		String id = servlet.getParameter("id");
+		
+		System.out.println(id);
+
+		ReminderServices Reminders = new ReminderServices();
+		Reminders.delete(Integer.parseInt(id));
+		
+		model.addAttribute("response", "{\"response\":\"request sent\"}");
+		return "response";
+	}
+
+	
+
 }
